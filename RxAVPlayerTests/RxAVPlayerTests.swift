@@ -11,6 +11,7 @@ import XCTest
 import AVFoundation
 import RxSwift
 import RxCocoa
+import RxBlocking
 
 class RxAVPlayerRateTests: XCTestCase {
     let player = AVPlayer()
@@ -44,6 +45,8 @@ class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
                 self.interval = interval
                 return ""
             }
+            
+            private override func removeTimeObserver(observer: AnyObject) { }
         }
         
         let player = MockPlayer()
@@ -57,12 +60,12 @@ class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
     
     func testPeriodicTimeObserver_NotifiesObserversWhenItsBlockIsCalled() {
         class MockPlayer: AVPlayer {
-            var block: (CMTime -> Void)!
-            
             private override func addPeriodicTimeObserverForInterval(interval: CMTime, queue: dispatch_queue_t?, usingBlock block: (CMTime) -> Void) -> AnyObject {
-                self.block = block
+                block(CMTime(seconds: 2, preferredTimescale: CMTimeScale(1)))
                 return ""
             }
+            
+            private override func removeTimeObserver(observer: AnyObject) { }
         }
         
         let player = MockPlayer()
@@ -75,9 +78,28 @@ class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
             }.dispose()
         
         let time = CMTime(seconds: 2, preferredTimescale: CMTimeScale(1))
-        player.block(time)
         
         XCTAssertEqual(capturedTime, time)
+    }
+    
+    func testPeriodicTimeObserver_ShouldRemoveTheTimeObserverWhenDisposed() {
+        class MockPlayer: AVPlayer {
+            var capturedRemove: String!
+            
+            private override func addPeriodicTimeObserverForInterval(interval: CMTime, queue: dispatch_queue_t?, usingBlock block: (CMTime) -> Void) -> AnyObject {
+                return "test"
+            }
+            
+            private override func removeTimeObserver(observer: AnyObject) {
+                capturedRemove = observer as! String
+            }
+        }
         
+        let player = MockPlayer()
+        let interval = CMTime(seconds: 1, preferredTimescale: CMTimeScale(1))
+        player.rx_periodicTimeObserver(interval: interval).subscribeNext { time in
+            }.dispose()
+        
+        XCTAssertEqual("test", player.capturedRemove)
     }
 }

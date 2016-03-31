@@ -22,8 +22,9 @@ extension AVPlayer {
             let t = self.addPeriodicTimeObserverForInterval(interval, queue: nil) { time in
                 observer.on(.Next(time))
             }
+            
             return AnonymousDisposable {
-                
+                self.removeTimeObserver(t)
             }
         }
     }
