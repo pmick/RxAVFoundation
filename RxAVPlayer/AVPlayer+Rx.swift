@@ -28,4 +28,16 @@ extension AVPlayer {
             }
         }
     }
+    
+    public func rx_boundaryTimeObserver(times times: [CMTime]) -> Observable<Void> {
+        return Observable.create { observer in
+            let timeValues = times.map() { NSValue(CMTime: $0) }
+            let t = self.addBoundaryTimeObserverForTimes(timeValues, queue: nil) {
+                observer.on(.Next(()))
+            }
+            return AnonymousDisposable {
+                self.removeTimeObserver(t)
+            }
+        }
+    }
 }
