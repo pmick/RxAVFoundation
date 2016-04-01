@@ -57,11 +57,43 @@ class RxAVPlayerStatusTests: XCTestCase {
         
         let player = MockPlayer()
         var capturedStatus: AVPlayerStatus?
-        let o = player.rx_status.subscribeNext { capturedStatus = $0 }
+        let sut = player.rx_status.subscribeNext { capturedStatus = $0 }
         player.changeableStatus = .ReadyToPlay
-        o.dispose()
+        sut.dispose()
         
         XCTAssertEqual(capturedStatus, AVPlayerStatus.ReadyToPlay)
+    }
+}
+
+class RxAVPlayerErrorTests: XCTestCase {
+    func testObservingStatus_ShouldReturnTheDefaultUnknown() {
+        let player = AVPlayer()
+        var capturedError: NSError?
+        player.rx_error
+            .subscribeNext { capturedError = $0 }
+            .dispose()
+        
+        XCTAssertNil(capturedError)
+    }
+    
+    func testObservingStatus_WhenItChangesToReadyToPlay_ShouldUpdateTheObserver() {
+        // Makes it so that we can update the readonly property
+        class MockPlayer: AVPlayer {
+            var changeableError: NSError? = nil {
+                willSet { self.willChangeValueForKey("error") }
+                didSet { self.didChangeValueForKey("error") }
+            }
+            private override var error: NSError? { return changeableError }
+        }
+        
+        let player = MockPlayer()
+        var capturedError: NSError?
+        let sut = player.rx_error.subscribeNext { capturedError = $0 }
+        let error = NSError(domain: "test", code: 0, userInfo: nil)
+        player.changeableError = error
+        sut.dispose()
+        
+        XCTAssertEqual(capturedError, error)
     }
 }
 

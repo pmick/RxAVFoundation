@@ -22,15 +22,19 @@ extension AVPlayer {
             .map { $0 ?? .Unknown }
     }
     
+    // TODO: This is directly related to status. Should these be wrapped up into one?
+    // potentially an enum that wraps status with an associated error for Failed status?
+    public var rx_error: Observable<NSError?> {
+        return self.rx_observe(NSError.self, "error")
+    }
+    
     public func rx_periodicTimeObserver(interval interval: CMTime) -> Observable<CMTime> {
         return Observable.create { observer in
             let t = self.addPeriodicTimeObserverForInterval(interval, queue: nil) { time in
                 observer.on(.Next(time))
             }
             
-            return AnonymousDisposable {
-                self.removeTimeObserver(t)
-            }
+            return AnonymousDisposable { self.removeTimeObserver(t) }
         }
     }
     
@@ -40,9 +44,8 @@ extension AVPlayer {
             let t = self.addBoundaryTimeObserverForTimes(timeValues, queue: nil) {
                 observer.on(.Next(()))
             }
-            return AnonymousDisposable {
-                self.removeTimeObserver(t)
-            }
+            
+            return AnonymousDisposable { self.removeTimeObserver(t) }
         }
     }
 }
