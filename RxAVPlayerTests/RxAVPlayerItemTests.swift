@@ -85,7 +85,7 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldUpdateRxError() {
         class MockItem: AVPlayerItem {
             private override var error: NSError? {
-                return NSError.test
+                return NSError.Test
             }
         }
         
@@ -95,7 +95,7 @@ class RxAVPlayerItemTests: XCTestCase {
             .subscribeNext { capturedError = $0 }
             .dispose()
         
-        XCTAssertEqual(capturedError, NSError.test)
+        XCTAssertEqual(capturedError, NSError.Test)
     }
     
     // MARK: PlaybackLikelyToKeepUp

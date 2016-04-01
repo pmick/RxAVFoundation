@@ -10,6 +10,8 @@
 		40547DE71CAEEAD3000F5383 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DE61CAEEAD3000F5383 /* AVPlayerItem+Rx.swift */; };
 		40547DE91CAEEAE5000F5383 /* RxAVPlayerItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */; };
 		40547DEB1CAEF47F000F5383 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DEA1CAEF47F000F5383 /* TestHelpers.swift */; };
+		40547DED1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DEC1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift */; };
+		40547DF11CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */; };
 		40B801611CAC6CF50009BF04 /* RxAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B801601CAC6CF50009BF04 /* RxAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40B801681CAC6CF50009BF04 /* RxAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8015D1CAC6CF50009BF04 /* RxAVPlayer.framework */; };
 		40B8016D1CAC6CF50009BF04 /* RxAVPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B8016C1CAC6CF50009BF04 /* RxAVPlayerTests.swift */; };
@@ -31,6 +33,8 @@
 		40547DE61CAEEAD3000F5383 /* AVPlayerItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Rx.swift"; sourceTree = "<group>"; };
 		40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVPlayerItemTests.swift; sourceTree = "<group>"; };
 		40547DEA1CAEF47F000F5383 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		40547DEC1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsynchronousKeyValueLoading+Rx.swift"; sourceTree = "<group>"; };
+		40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVAsynchronousKeyValueLoadingTests.swift; sourceTree = "<group>"; };
 		40B8015D1CAC6CF50009BF04 /* RxAVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxAVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B801601CAC6CF50009BF04 /* RxAVPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxAVPlayer.h; sourceTree = "<group>"; };
 		40B801621CAC6CF50009BF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				40B801621CAC6CF50009BF04 /* Info.plist */,
 				40B801771CAC70310009BF04 /* AVPlayer+Rx.swift */,
 				40547DE61CAEEAD3000F5383 /* AVPlayerItem+Rx.swift */,
+				40547DEC1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift */,
 			);
 			path = RxAVPlayer;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			children = (
 				40B8016C1CAC6CF50009BF04 /* RxAVPlayerTests.swift */,
 				40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */,
+				40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */,
 				40B8016E1CAC6CF50009BF04 /* Info.plist */,
 				40547DEA1CAEF47F000F5383 /* TestHelpers.swift */,
 			);
@@ -267,6 +273,7 @@
 			files = (
 				40547DE71CAEEAD3000F5383 /* AVPlayerItem+Rx.swift in Sources */,
 				40B801781CAC70310009BF04 /* AVPlayer+Rx.swift in Sources */,
+				40547DED1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40547DE91CAEEAE5000F5383 /* RxAVPlayerItemTests.swift in Sources */,
+				40547DF11CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */,
 				40B8016D1CAC6CF50009BF04 /* RxAVPlayerTests.swift in Sources */,
 				40547DEB1CAEF47F000F5383 /* TestHelpers.swift in Sources */,
 			);

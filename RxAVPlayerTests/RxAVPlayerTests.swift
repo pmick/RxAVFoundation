@@ -89,10 +89,10 @@ class RxAVPlayerErrorTests: XCTestCase {
         let player = MockPlayer()
         var capturedError: NSError?
         let sut = player.rx_error.subscribeNext { capturedError = $0 }
-        player.changeableError = NSError.test
+        player.changeableError = NSError.Test
         sut.dispose()
         
-        XCTAssertEqual(capturedError, NSError.test)
+        XCTAssertEqual(capturedError, NSError.Test)
     }
 }
 

@@ -9,7 +9,13 @@
 import Foundation
 
 extension NSError {
-    class var test: NSError {
+    class var Test: NSError {
         return NSError(domain: "test", code: 0, userInfo: nil)
+    }
+}
+
+extension NSURL {
+    class var Test: NSURL {
+        return NSURL(string: "www.google.com")!
     }
 }
