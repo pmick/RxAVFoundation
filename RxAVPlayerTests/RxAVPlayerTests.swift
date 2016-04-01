@@ -89,11 +89,10 @@ class RxAVPlayerErrorTests: XCTestCase {
         let player = MockPlayer()
         var capturedError: NSError?
         let sut = player.rx_error.subscribeNext { capturedError = $0 }
-        let error = NSError(domain: "test", code: 0, userInfo: nil)
-        player.changeableError = error
+        player.changeableError = NSError.test
         sut.dispose()
         
-        XCTAssertEqual(capturedError, error)
+        XCTAssertEqual(capturedError, NSError.test)
     }
 }
 
@@ -228,7 +227,3 @@ class RxAVPlayerPeriodicBoundaryObserverTests: XCTestCase {
         XCTAssertEqual("test", player.capturedRemove)
     }
 }
-
-
-
-
