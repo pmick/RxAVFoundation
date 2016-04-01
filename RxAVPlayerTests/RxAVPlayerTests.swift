@@ -15,24 +15,53 @@ import RxBlocking
 
 class RxAVPlayerRateTests: XCTestCase {
     let player = AVPlayer()
-    var capturedRate: Float!
+    var capturedRate: Float?
 
     func testObserving_ShouldReturnTheDefaultRateOfZero() {
-        player.rx_rate.subscribeNext() { val in
-            self.capturedRate = val
-        }.dispose()
+        player.rx_rate
+            .subscribeNext { self.capturedRate = $0 }
+            .dispose()
         
         XCTAssertEqual(capturedRate, 0)
     }
     
     func testObservingAPlayerWithARateOfOne_ShouldReturnOne() {
+        let sut = player.rx_rate.subscribeNext() { self.capturedRate = $0 }
         player.rate = 1
-        
-        player.rx_rate.subscribeNext() { val in
-            self.capturedRate = val
-        }.dispose()
+        sut.dispose()
         
         XCTAssertEqual(capturedRate, 1)
+    }
+}
+
+class RxAVPlayerStatusTests: XCTestCase {
+    func testObservingStatus_ShouldReturnTheDefaultUnknown() {
+        let player = AVPlayer()
+        var capturedStatus: AVPlayerStatus?
+        player.rx_status
+            .subscribeNext { capturedStatus = $0 }
+            .dispose()
+        
+        XCTAssertEqual(capturedStatus, AVPlayerStatus.Unknown)
+    }
+    
+    func testObservingStatus_WhenItChangesToReadyToPlay_ShouldUpdateTheObserver() {
+        // Makes it so that we can update the readonly property
+        class MockPlayer: AVPlayer {
+            var changeableStatus: AVPlayerStatus = .Unknown {
+                willSet { self.willChangeValueForKey("status") }
+                didSet { self.didChangeValueForKey("status") }
+            }
+            private override var status: AVPlayerStatus { return changeableStatus }
+        }
+        
+        let player = MockPlayer()
+        var capturedStatus: AVPlayerStatus?
+        let o = player.rx_status.subscribeNext { capturedStatus = $0 }
+        player.changeableStatus = .ReadyToPlay
+        o.dispose()
+        
+        XCTAssertEqual(capturedStatus, AVPlayerStatus.ReadyToPlay)
     }
 }
 
@@ -167,3 +196,7 @@ class RxAVPlayerPeriodicBoundaryObserverTests: XCTestCase {
         XCTAssertEqual("test", player.capturedRemove)
     }
 }
+
+
+
+

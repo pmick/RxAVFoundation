@@ -17,6 +17,11 @@ extension AVPlayer {
             .map { $0 ?? 0 }
     }
     
+    public var rx_status: Observable<AVPlayerStatus> {
+        return self.rx_observe(AVPlayerStatus.self, "status")
+            .map { $0 ?? .Unknown }
+    }
+    
     public func rx_periodicTimeObserver(interval interval: CMTime) -> Observable<CMTime> {
         return Observable.create { observer in
             let t = self.addPeriodicTimeObserverForInterval(interval, queue: nil) { time in
