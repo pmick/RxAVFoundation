@@ -19,7 +19,7 @@ extension AVPlayerItem {
     
     public var rx_duration: Observable<CMTime> {
         return self.rx_observe(CMTime.self, "duration")
-            .map { $0 ?? CMTime(seconds: 0, preferredTimescale: 0) }
+            .map { $0 ?? CMTime.zero }
     }
     
     public var rx_error: Observable<NSError?> {
@@ -28,6 +28,16 @@ extension AVPlayerItem {
     
     public var rx_playbackLikelyToKeepUp: Observable<Bool> {
         return self.rx_observe(Bool.self, "playbackLikelyToKeepUp")
+            .map { $0 ?? false }
+    }
+    
+    public var rx_playbackBufferFull: Observable<Bool> {
+        return self.rx_observe(Bool.self, "playbackBufferFull")
+            .map { $0 ?? false }
+    }
+    
+    public var rx_playbackBufferEmpty: Observable<Bool> {
+        return self.rx_observe(Bool.self, "playbackBufferEmpty")
             .map { $0 ?? false }
     }
     

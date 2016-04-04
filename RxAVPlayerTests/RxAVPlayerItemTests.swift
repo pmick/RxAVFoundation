@@ -50,7 +50,7 @@ class RxAVPlayerItemTests: XCTestCase {
             .subscribeNext { capturedDuration = $0 }
             .dispose()
         
-        XCTAssertEqual(capturedDuration, CMTime(seconds: 0, preferredTimescale: 0))
+        XCTAssertTrue(CMTimeCompare(capturedDuration!, kCMTimeZero) == 0)
     }
 
     // TODO: fix this -
@@ -120,6 +120,62 @@ class RxAVPlayerItemTests: XCTestCase {
         let sut = MockItem(asset: asset)
         var capturedFlag: Bool!
         sut.rx_playbackLikelyToKeepUp
+            .subscribeNext { capturedFlag = $0 }
+            .dispose()
+        
+        XCTAssertTrue(capturedFlag)
+    }
+    
+    // MARK: PlaybackBufferFull
+    
+    func testPlayerItem_ShouldAllowObservationOfPlaybackBufferFull() {
+        let sut = AVPlayerItem(asset: asset)
+        var capturedFlag: Bool!
+        sut.rx_playbackBufferFull
+            .subscribeNext { capturedFlag = $0 }
+            .dispose()
+        
+        XCTAssertFalse(capturedFlag)
+    }
+    
+    func testPlayerItem_ShouldUpdateRxPlaybackBufferFull() {
+        class MockItem: AVPlayerItem {
+            private override var playbackBufferFull: Bool {
+                return true
+            }
+        }
+        
+        let sut = MockItem(asset: asset)
+        var capturedFlag: Bool!
+        sut.rx_playbackBufferFull
+            .subscribeNext { capturedFlag = $0 }
+            .dispose()
+        
+        XCTAssertTrue(capturedFlag)
+    }
+    
+    // MARK: PlaybackBufferEmpty
+    
+    func testPlayerItem_ShouldAllowObservationOfPlaybackBufferEmpty() {
+        let sut = AVPlayerItem(asset: asset)
+        var capturedFlag: Bool!
+        sut.rx_playbackBufferEmpty
+            .subscribeNext { capturedFlag = $0 }
+            .dispose()
+        
+        XCTAssertFalse(capturedFlag)
+    }
+    
+    func testPlayerItem_ShouldUpdateRxPlaybackBufferEmpty() {
+        class MockItem: AVPlayerItem {
+            private override var playbackBufferEmpty: Bool {
+                return true
+            }
+        }
+        
+        let sut = MockItem(asset: asset)
+        var capturedFlag: Bool!
+        sut.rx_playbackBufferEmpty
             .subscribeNext { capturedFlag = $0 }
             .dispose()
         

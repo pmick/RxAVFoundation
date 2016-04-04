@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40547DE71CAEEAD3000F5383 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DE61CAEEAD3000F5383 /* AVPlayerItem+Rx.swift */; };
+		4051053C1CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405105391CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift */; };
+		4051053D1CB2F29000D450B2 /* AVPlayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051053A1CB2F29000D450B2 /* AVPlayer+Rx.swift */; };
+		4051053E1CB2F29000D450B2 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051053B1CB2F29000D450B2 /* AVPlayerItem+Rx.swift */; };
+		405105401CB2F7B100D450B2 /* CMTime+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051053F1CB2F7B100D450B2 /* CMTime+Helpers.swift */; };
 		40547DE91CAEEAE5000F5383 /* RxAVPlayerItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */; };
 		40547DEB1CAEF47F000F5383 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DEA1CAEF47F000F5383 /* TestHelpers.swift */; };
-		40547DED1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DEC1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift */; };
 		40547DF11CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */; };
 		40B801611CAC6CF50009BF04 /* RxAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B801601CAC6CF50009BF04 /* RxAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40B801681CAC6CF50009BF04 /* RxAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8015D1CAC6CF50009BF04 /* RxAVPlayer.framework */; };
 		40B8016D1CAC6CF50009BF04 /* RxAVPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B8016C1CAC6CF50009BF04 /* RxAVPlayerTests.swift */; };
-		40B801781CAC70310009BF04 /* AVPlayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B801771CAC70310009BF04 /* AVPlayer+Rx.swift */; };
 		7A48D462F1A35F83E4D55EF9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C53B1EBF9F5D20F7D4516B2 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,10 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		40547DE61CAEEAD3000F5383 /* AVPlayerItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Rx.swift"; sourceTree = "<group>"; };
+		405105391CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsynchronousKeyValueLoading+Rx.swift"; sourceTree = "<group>"; };
+		4051053A1CB2F29000D450B2 /* AVPlayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Rx.swift"; sourceTree = "<group>"; };
+		4051053B1CB2F29000D450B2 /* AVPlayerItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Rx.swift"; sourceTree = "<group>"; };
+		4051053F1CB2F7B100D450B2 /* CMTime+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMTime+Helpers.swift"; sourceTree = "<group>"; };
 		40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVPlayerItemTests.swift; sourceTree = "<group>"; };
 		40547DEA1CAEF47F000F5383 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
-		40547DEC1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsynchronousKeyValueLoading+Rx.swift"; sourceTree = "<group>"; };
 		40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVAsynchronousKeyValueLoadingTests.swift; sourceTree = "<group>"; };
 		40B8015D1CAC6CF50009BF04 /* RxAVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxAVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B801601CAC6CF50009BF04 /* RxAVPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxAVPlayer.h; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		40B801671CAC6CF50009BF04 /* RxAVPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxAVPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B8016C1CAC6CF50009BF04 /* RxAVPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAVPlayerTests.swift; sourceTree = "<group>"; };
 		40B8016E1CAC6CF50009BF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40B801771CAC70310009BF04 /* AVPlayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Rx.swift"; sourceTree = "<group>"; };
 		7C53B1EBF9F5D20F7D4516B2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96772486540662D1DE9E3D16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AB3252B24238415422CD70C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +69,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		405105381CB2F29000D450B2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				405105391CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift */,
+				4051053A1CB2F29000D450B2 /* AVPlayer+Rx.swift */,
+				4051053B1CB2F29000D450B2 /* AVPlayerItem+Rx.swift */,
+				4051053F1CB2F7B100D450B2 /* CMTime+Helpers.swift */,
+			);
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
 		40B801531CAC6CF50009BF04 = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +103,9 @@
 		40B8015F1CAC6CF50009BF04 /* RxAVPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				405105381CB2F29000D450B2 /* Source */,
 				40B801601CAC6CF50009BF04 /* RxAVPlayer.h */,
 				40B801621CAC6CF50009BF04 /* Info.plist */,
-				40B801771CAC70310009BF04 /* AVPlayer+Rx.swift */,
-				40547DE61CAEEAD3000F5383 /* AVPlayerItem+Rx.swift */,
-				40547DEC1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift */,
 			);
 			path = RxAVPlayer;
 			sourceTree = "<group>";
@@ -271,9 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40547DE71CAEEAD3000F5383 /* AVPlayerItem+Rx.swift in Sources */,
-				40B801781CAC70310009BF04 /* AVPlayer+Rx.swift in Sources */,
-				40547DED1CAF170B000F5383 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
+				405105401CB2F7B100D450B2 /* CMTime+Helpers.swift in Sources */,
+				4051053C1CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
+				4051053D1CB2F29000D450B2 /* AVPlayer+Rx.swift in Sources */,
+				4051053E1CB2F29000D450B2 /* AVPlayerItem+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
