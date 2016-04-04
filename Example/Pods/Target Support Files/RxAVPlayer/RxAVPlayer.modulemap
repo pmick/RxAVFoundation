@@ -1,0 +1,6 @@
+framework module RxAVPlayer {
+  umbrella header "RxAVPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

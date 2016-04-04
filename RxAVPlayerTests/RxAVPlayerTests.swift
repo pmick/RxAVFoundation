@@ -11,7 +11,6 @@ import XCTest
 import AVFoundation
 import RxSwift
 import RxCocoa
-import RxBlocking
 
 class RxAVPlayerRateTests: XCTestCase {
     let player = AVPlayer()
