@@ -25,6 +25,11 @@ class ViewController: UIViewController {
         let item = AVPlayerItem(URL: NSURL(string: "https://i.imgur.com/9rGrj10.mp4")!)
         player.replaceCurrentItemWithPlayerItem(item)
         
+        playerView.playerLayer.rx_readyForDisplay
+            .subscribeNext { ready in
+                print("ready for display: \(ready)")
+            }.addDisposableTo(disposeBag)
+        
         playerView.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         playerView.playerLayer.player = player
         

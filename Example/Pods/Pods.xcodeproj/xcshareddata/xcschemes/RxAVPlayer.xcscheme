@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C849CD297BB6335C8FD9F2A8'
+               BlueprintIdentifier = '2C08720B32408F79E497C953'
                BlueprintName = 'RxAVPlayer'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'RxAVPlayer.framework'>

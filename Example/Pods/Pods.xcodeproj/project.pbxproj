@@ -129,23 +129,23 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>04B00D8CEB79F7896A5EDF5D5DE443CD</key>
+		<key>0483FF4BDDA47E7B80F6D791F029DA52</key>
 		<dict>
-			<key>children</key>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
 			<array>
-				<string>AF644E763E8C5729D435A011DE3E6EE6</string>
-				<string>0A2F0E339F432448827AA9BF8936A333</string>
-				<string>58B316776868E79A23BD6DDF90C56663</string>
-				<string>2BCFF28C8EC7F87FBB4C128221ECA36E</string>
+				<string>A3FD8006F1C04B2A02843FBB520B9B9A</string>
+				<string>314F8586CA1DBC90A7D012D5DA6CD49E</string>
+				<string>847BB39260A0406B6B53137324150D9A</string>
+				<string>9C794FC0DBE1426C9FB732C80AB9C104</string>
+				<string>9B192D190115A96874A5302DCD7F562A</string>
+				<string>AA057BCFBFC94FD8C70798BD7FD75DFA</string>
 			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Source</string>
-			<key>path</key>
-			<string>Source</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>051708F8985D24C6A2508FD27626A416</key>
 		<dict>
@@ -431,19 +431,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>0A2F0E339F432448827AA9BF8936A333</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AVPlayer+Rx.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>0ADBF4BD2B86189F115319A9AFCE0768</key>
 		<dict>
 			<key>fileRef</key>
@@ -495,26 +482,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>0D8BB80F2C2C4A483A741478999A9208</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7698F0D270F045AD3AABD541E1BFCB12</string>
-				<string>82165A82775FAD687403A45C674E590D</string>
-				<string>5536B3E538943CBC58397A08FD8019CB</string>
-				<string>F1CBEF33F184E1FE57E9A642A0FB8685</string>
-				<string>0E7E68AB13518DB5795108B127304914</string>
-				<string>7D5E9E1FE88BCDD524B72E82F197B57A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>Example/Pods/Target Support Files/RxAVPlayer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>0E3C756135AF64590CB2ED80939B2B81</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -536,19 +503,6 @@
 			<string>03DF04052D28988A0D4E462CC8306F0B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>0E7E68AB13518DB5795108B127304914</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RxAVPlayer-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>0F121571BF223B4166F0F3328F9A91D2</key>
 		<dict>
@@ -638,6 +592,22 @@
 			<string>Switch.swift</string>
 			<key>path</key>
 			<string>RxSwift/Observables/Implementations/Switch.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>10FC1061BE7E189F43708CB82B991911</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D07E2DA9B2ECDC6B51F2890FB12F16B8</string>
+				<string>BC60375F170567BFB673686249FE3CD8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>RxAVPlayer</string>
+			<key>path</key>
+			<string>../..</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1306,13 +1276,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>2B1C8D908607D0CBB91139899C1879E5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F1CBEF33F184E1FE57E9A642A0FB8685</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>2B389FAB51F6EEA43F72CA7BDC8E8E28</key>
 		<dict>
 			<key>buildSettings</key>
@@ -1414,19 +1377,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2BCFF28C8EC7F87FBB4C128221ECA36E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>CMTime+Helpers.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>2C174DC4536B823B6F28CF434CDE603D</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1494,6 +1444,13 @@
 		<dict>
 			<key>fileRef</key>
 			<string>D528D144D9F3DCB29986192E2C93EA83</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>314F8586CA1DBC90A7D012D5DA6CD49E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BCCF4EDA25DAA0EB4D3B3C0136E52C74</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1632,6 +1589,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>377CFD663EF9BBC7AAF0AD2ACD4C01FE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>RxAVPlayer.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>37AEAA46D0C0AB2D007ACE21E95C2D36</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1745,7 +1715,7 @@
 		<key>3B7BF0EBD266A7E44D1E86749F7110E8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7D5E9E1FE88BCDD524B72E82F197B57A</string>
+			<string>CFC821C88E32099B29833CA3F5AE4827</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1891,6 +1861,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>46EE00428F9BBB9594E88B9325033336</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RxAVPlayer-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>47329B908A84F6616C58C2B4B2440273</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1940,13 +1923,6 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>47F7B93D658A5916724045D8614C6A00</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2BCFF28C8EC7F87FBB4C128221ECA36E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>47FB9631B727DC64DD64F6C8D3A99F76</key>
 		<dict>
@@ -2029,6 +2005,19 @@
 			<string>FBAC6CA962E9E25DF1BBAA8E16FDA047</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>4A124528313DE6C444873F04E9073C9C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AVPlayerLayer+Rx.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>4A382D96E57C7802DED15E41016483EA</key>
 		<dict>
@@ -2114,7 +2103,7 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>954D7D407A126E84A739218FECFB918C</string>
+				<string>10FC1061BE7E189F43708CB82B991911</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -2426,19 +2415,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>5536B3E538943CBC58397A08FD8019CB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>RxAVPlayer.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>554EA06757FC1766BCCC0549E5D16426</key>
 		<dict>
 			<key>fileRef</key>
@@ -2481,13 +2457,6 @@
 			<string>RxCocoa/iOS/UILabel+Rx.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5724134C0C1DB638CA4B30E28C197524</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0A2F0E339F432448827AA9BF8936A333</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>57F16F5AAD161F6DCF6C819A54F9B862</key>
 		<dict>
@@ -2554,19 +2523,6 @@
 			<string>C47AB7C93FBD607CBFB8640BA56051F4</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>58B316776868E79A23BD6DDF90C56663</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AVPlayerItem+Rx.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>594DA9171C9C636F29C8A5DF541FC856</key>
 		<dict>
@@ -2751,23 +2707,6 @@
 			<string>E53C60A7D13F9F7CDD3C6B22A164E67F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>5E39B244BF93B513CF863E3D7EE0C895</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C4C0AD2A06511890A4D52A21BA8A2598</string>
-				<string>5724134C0C1DB638CA4B30E28C197524</string>
-				<string>B3A04EB099EBB30F1326BF436213FF03</string>
-				<string>47F7B93D658A5916724045D8614C6A00</string>
-				<string>2B1C8D908607D0CBB91139899C1879E5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
 		</dict>
 		<key>5F3F0748D165646CF31FE6D5F3AD73F9</key>
 		<dict>
@@ -3114,6 +3053,17 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>6B2D8AF2691807FE7E3678EA85F935FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>RxAVPlayer.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6B92FC50333E60C61C227099717DD3AB</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -3266,6 +3216,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>6FF6F19674484D1B97BC6E6DCFF6E52F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AVAsynchronousKeyValueLoading+Rx.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>701CEEAF899420FB587074BDD41620F3</key>
 		<dict>
 			<key>children</key>
@@ -3320,7 +3283,7 @@
 		<key>71AC0BA07A8A3B6F403932D0261E2A99</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>5536B3E538943CBC58397A08FD8019CB</string>
+			<string>377CFD663EF9BBC7AAF0AD2ACD4C01FE</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -3486,19 +3449,6 @@
 			<string>Pods</string>
 			<key>path</key>
 			<string>Target Support Files/Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7698F0D270F045AD3AABD541E1BFCB12</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3736,19 +3686,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>7D5E9E1FE88BCDD524B72E82F197B57A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RxAVPlayer-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>7D604B78A0C92E427C24C5C0758B9E12</key>
 		<dict>
 			<key>fileRef</key>
@@ -3970,17 +3907,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>82165A82775FAD687403A45C674E590D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RxAVPlayer.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>824008A8EF5D60906CA9FF083CAFD2B3</key>
 		<dict>
 			<key>fileRef</key>
@@ -4028,6 +3954,13 @@
 		<dict>
 			<key>fileRef</key>
 			<string>03AB5DD7FDB262590603E409A748B6EA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>847BB39260A0406B6B53137324150D9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D653B7B67F1467A303E1CFDE32C1B71D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -4212,6 +4145,19 @@
 			<string>SchedulerType.swift</string>
 			<key>path</key>
 			<string>RxSwift/SchedulerType.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8907191BF3E9CAEB5774C0EE621139E5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CMTime+Helpers.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4422,7 +4368,7 @@
 		<key>9173F9F21DD39A87F780A6B9A80A9287</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>5536B3E538943CBC58397A08FD8019CB</string>
+			<string>377CFD663EF9BBC7AAF0AD2ACD4C01FE</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -4562,22 +4508,6 @@
 			<string>369AF46E95720E2BEED63A1C6848DC5F</string>
 			<key>remoteInfo</key>
 			<string>RxCocoa</string>
-		</dict>
-		<key>954D7D407A126E84A739218FECFB918C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>04B00D8CEB79F7896A5EDF5D5DE443CD</string>
-				<string>0D8BB80F2C2C4A483A741478999A9208</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>RxAVPlayer</string>
-			<key>path</key>
-			<string>../..</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>95B3C8D6D878D6C71552F9B735CC096E</key>
 		<dict>
@@ -4754,6 +4684,13 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>9B192D190115A96874A5302DCD7F562A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8907191BF3E9CAEB5774C0EE621139E5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>9B957F843CB625C8DE44625221C42407</key>
 		<dict>
 			<key>fileRef</key>
@@ -4765,6 +4702,13 @@
 		<dict>
 			<key>fileRef</key>
 			<string>EC8C4484F7F586035264870A4C3D7776</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9C794FC0DBE1426C9FB732C80AB9C104</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4A124528313DE6C444873F04E9073C9C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -4977,6 +4921,13 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>A3FD8006F1C04B2A02843FBB520B9B9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6FF6F19674484D1B97BC6E6DCFF6E52F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>A4A59BB4BF3A692AA740306367913D8D</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -5055,6 +5006,13 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>AA057BCFBFC94FD8C70798BD7FD75DFA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>46EE00428F9BBB9594E88B9325033336</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>AA1BE7AFA0D0C84CFA0A464EC28795B2</key>
 		<dict>
 			<key>fileRef</key>
@@ -5130,19 +5088,6 @@
 			<string>PriorityQueue.swift</string>
 			<key>path</key>
 			<string>RxSwift/DataStructures/PriorityQueue.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF644E763E8C5729D435A011DE3E6EE6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AVAsynchronousKeyValueLoading+Rx.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5251,13 +5196,6 @@
 			<string>RxSwift/Observables/Observable+Debug.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B3A04EB099EBB30F1326BF436213FF03</key>
-		<dict>
-			<key>fileRef</key>
-			<string>58B316776868E79A23BD6DDF90C56663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>B5B446F37FFB9DED72CAA9F65897742F</key>
 		<dict>
@@ -5407,6 +5345,26 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>BC60375F170567BFB673686249FE3CD8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E90A154CD3B1B6C6BE25FA304463817F</string>
+				<string>6B2D8AF2691807FE7E3678EA85F935FC</string>
+				<string>377CFD663EF9BBC7AAF0AD2ACD4C01FE</string>
+				<string>46EE00428F9BBB9594E88B9325033336</string>
+				<string>D4F6D7BE66AD98F40662B4D2A02CE5AC</string>
+				<string>CFC821C88E32099B29833CA3F5AE4827</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>Example/Pods/Target Support Files/RxAVPlayer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>BC6F1ACA9D726B8C73B3C98C263D269E</key>
 		<dict>
 			<key>fileRef</key>
@@ -5484,6 +5442,19 @@
 			<string>ControlEvent+Driver.swift</string>
 			<key>path</key>
 			<string>RxCocoa/Common/CocoaUnits/Driver/ControlEvent+Driver.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BCCF4EDA25DAA0EB4D3B3C0136E52C74</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AVPlayer+Rx.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5618,13 +5589,6 @@
 			<string>RxSwift/Subjects/Variable.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C4C0AD2A06511890A4D52A21BA8A2598</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF644E763E8C5729D435A011DE3E6EE6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>C4E25D8A554E41D122AA620CA46131C7</key>
 		<dict>
@@ -5993,6 +5957,19 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>CFC821C88E32099B29833CA3F5AE4827</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RxAVPlayer-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>D00D46943DF3C9C1CA70979046D24E3C</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -6063,6 +6040,25 @@
 			<string>ScheduledDisposable.swift</string>
 			<key>path</key>
 			<string>RxSwift/Disposables/ScheduledDisposable.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D07E2DA9B2ECDC6B51F2890FB12F16B8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6FF6F19674484D1B97BC6E6DCFF6E52F</string>
+				<string>BCCF4EDA25DAA0EB4D3B3C0136E52C74</string>
+				<string>D653B7B67F1467A303E1CFDE32C1B71D</string>
+				<string>4A124528313DE6C444873F04E9073C9C</string>
+				<string>8907191BF3E9CAEB5774C0EE621139E5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Source</string>
+			<key>path</key>
+			<string>Source</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -6360,7 +6356,7 @@
 			<string>C990DDE854BD3E61B286985AED89F0C2</string>
 			<key>buildPhases</key>
 			<array>
-				<string>5E39B244BF93B513CF863E3D7EE0C895</string>
+				<string>0483FF4BDDA47E7B80F6D791F029DA52</string>
 				<string>963DFD1489587AA9A6165623C3ABE08F</string>
 				<string>75853F576094A54D3EB03E20B962C4DD</string>
 			</array>
@@ -6381,6 +6377,19 @@
 			<string>0D09C6E13FA79C5E02077B5E4186F7B4</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>D4F6D7BE66AD98F40662B4D2A02CE5AC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RxAVPlayer-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D528D144D9F3DCB29986192E2C93EA83</key>
 		<dict>
@@ -6465,6 +6474,19 @@
 			<string>DeallocObservable.swift</string>
 			<key>path</key>
 			<string>RxCocoa/Common/Observables/Implementations/DeallocObservable.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D653B7B67F1467A303E1CFDE32C1B71D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AVPlayerItem+Rx.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -6881,6 +6903,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>E90A154CD3B1B6C6BE25FA304463817F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>E99BC8FE153F4A663779CD5FEA8D986E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -7100,19 +7135,6 @@
 			<string>CC66F9271FCFD672D44E249E0BC1927C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>F1CBEF33F184E1FE57E9A642A0FB8685</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RxAVPlayer-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F1CCF0076F3C14233BA6761CCCA6B302</key>
 		<dict>
