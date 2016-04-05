@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4051053C1CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405105391CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift */; };
-		4051053D1CB2F29000D450B2 /* AVPlayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051053A1CB2F29000D450B2 /* AVPlayer+Rx.swift */; };
-		4051053E1CB2F29000D450B2 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051053B1CB2F29000D450B2 /* AVPlayerItem+Rx.swift */; };
-		405105401CB2F7B100D450B2 /* CMTime+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051053F1CB2F7B100D450B2 /* CMTime+Helpers.swift */; };
-		40547DE91CAEEAE5000F5383 /* RxAVPlayerItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */; };
-		40547DEB1CAEF47F000F5383 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DEA1CAEF47F000F5383 /* TestHelpers.swift */; };
-		40547DF11CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */; };
-		40B801611CAC6CF50009BF04 /* RxAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B801601CAC6CF50009BF04 /* RxAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4040FFC11CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBA1CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift */; };
+		4040FFC21CB470100096BEC2 /* AVPlayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */; };
+		4040FFC31CB470100096BEC2 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */; };
+		4040FFC41CB470100096BEC2 /* AVPlayerLayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBD1CB470100096BEC2 /* AVPlayerLayer+Rx.swift */; };
+		4040FFC51CB470100096BEC2 /* CMTime+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */; };
+		4040FFC61CB470100096BEC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4040FFBF1CB470100096BEC2 /* Info.plist */; };
+		4040FFC71CB470100096BEC2 /* RxAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4040FFC01CB470100096BEC2 /* RxAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4040FFD61CB4723A0096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCA1CB470170096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift */; };
+		4040FFD71CB4723C0096BEC2 /* RxAVPlayerItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCB1CB470170096BEC2 /* RxAVPlayerItemTests.swift */; };
+		4040FFD81CB4723F0096BEC2 /* RxAVPlayerLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCC1CB470170096BEC2 /* RxAVPlayerLayerTests.swift */; };
+		4040FFD91CB472420096BEC2 /* RxAVPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */; };
+		4040FFDA1CB472440096BEC2 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCE1CB470170096BEC2 /* TestHelpers.swift */; };
+		4040FFDB1CB472470096BEC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4040FFC91CB470170096BEC2 /* Info.plist */; };
 		40B801681CAC6CF50009BF04 /* RxAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8015D1CAC6CF50009BF04 /* RxAVPlayer.framework */; };
-		40B8016D1CAC6CF50009BF04 /* RxAVPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B8016C1CAC6CF50009BF04 /* RxAVPlayerTests.swift */; };
 		7A48D462F1A35F83E4D55EF9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C53B1EBF9F5D20F7D4516B2 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,19 +35,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		405105391CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsynchronousKeyValueLoading+Rx.swift"; sourceTree = "<group>"; };
-		4051053A1CB2F29000D450B2 /* AVPlayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Rx.swift"; sourceTree = "<group>"; };
-		4051053B1CB2F29000D450B2 /* AVPlayerItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Rx.swift"; sourceTree = "<group>"; };
-		4051053F1CB2F7B100D450B2 /* CMTime+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMTime+Helpers.swift"; sourceTree = "<group>"; };
-		40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVPlayerItemTests.swift; sourceTree = "<group>"; };
-		40547DEA1CAEF47F000F5383 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
-		40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVAsynchronousKeyValueLoadingTests.swift; sourceTree = "<group>"; };
+		4040FFBA1CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsynchronousKeyValueLoading+Rx.swift"; sourceTree = "<group>"; };
+		4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Rx.swift"; sourceTree = "<group>"; };
+		4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Rx.swift"; sourceTree = "<group>"; };
+		4040FFBD1CB470100096BEC2 /* AVPlayerLayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerLayer+Rx.swift"; sourceTree = "<group>"; };
+		4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMTime+Helpers.swift"; sourceTree = "<group>"; };
+		4040FFBF1CB470100096BEC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4040FFC01CB470100096BEC2 /* RxAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxAVPlayer.h; sourceTree = "<group>"; };
+		4040FFC91CB470170096BEC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4040FFCA1CB470170096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVAsynchronousKeyValueLoadingTests.swift; sourceTree = "<group>"; };
+		4040FFCB1CB470170096BEC2 /* RxAVPlayerItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVPlayerItemTests.swift; sourceTree = "<group>"; };
+		4040FFCC1CB470170096BEC2 /* RxAVPlayerLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVPlayerLayerTests.swift; sourceTree = "<group>"; };
+		4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVPlayerTests.swift; sourceTree = "<group>"; };
+		4040FFCE1CB470170096BEC2 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		40B8015D1CAC6CF50009BF04 /* RxAVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxAVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40B801601CAC6CF50009BF04 /* RxAVPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxAVPlayer.h; sourceTree = "<group>"; };
-		40B801621CAC6CF50009BF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40B801671CAC6CF50009BF04 /* RxAVPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxAVPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40B8016C1CAC6CF50009BF04 /* RxAVPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAVPlayerTests.swift; sourceTree = "<group>"; };
-		40B8016E1CAC6CF50009BF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C53B1EBF9F5D20F7D4516B2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96772486540662D1DE9E3D16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AB3252B24238415422CD70C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,22 +75,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		405105381CB2F29000D450B2 /* Source */ = {
+		4040FFB91CB470100096BEC2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				405105391CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift */,
-				4051053A1CB2F29000D450B2 /* AVPlayer+Rx.swift */,
-				4051053B1CB2F29000D450B2 /* AVPlayerItem+Rx.swift */,
-				4051053F1CB2F7B100D450B2 /* CMTime+Helpers.swift */,
+				4040FFBA1CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift */,
+				4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */,
+				4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */,
+				4040FFBD1CB470100096BEC2 /* AVPlayerLayer+Rx.swift */,
+				4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */,
+				4040FFBF1CB470100096BEC2 /* Info.plist */,
+				4040FFC01CB470100096BEC2 /* RxAVPlayer.h */,
 			);
 			path = Source;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
+		};
+		4040FFC81CB470170096BEC2 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4040FFC91CB470170096BEC2 /* Info.plist */,
+				4040FFCA1CB470170096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift */,
+				4040FFCB1CB470170096BEC2 /* RxAVPlayerItemTests.swift */,
+				4040FFCC1CB470170096BEC2 /* RxAVPlayerLayerTests.swift */,
+				4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */,
+				4040FFCE1CB470170096BEC2 /* TestHelpers.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
 		};
 		40B801531CAC6CF50009BF04 = {
 			isa = PBXGroup;
 			children = (
-				40B8015F1CAC6CF50009BF04 /* RxAVPlayer */,
-				40B8016B1CAC6CF50009BF04 /* RxAVPlayerTests */,
+				4040FFB91CB470100096BEC2 /* Source */,
+				4040FFC81CB470170096BEC2 /* Tests */,
 				40B8015E1CAC6CF50009BF04 /* Products */,
 				FB1023659BCA866FEFC77F26 /* Pods */,
 				BD3E022940559C91DB05505F /* Frameworks */,
@@ -98,28 +120,6 @@
 				40B801671CAC6CF50009BF04 /* RxAVPlayerTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		40B8015F1CAC6CF50009BF04 /* RxAVPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				405105381CB2F29000D450B2 /* Source */,
-				40B801601CAC6CF50009BF04 /* RxAVPlayer.h */,
-				40B801621CAC6CF50009BF04 /* Info.plist */,
-			);
-			path = RxAVPlayer;
-			sourceTree = "<group>";
-		};
-		40B8016B1CAC6CF50009BF04 /* RxAVPlayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				40B8016C1CAC6CF50009BF04 /* RxAVPlayerTests.swift */,
-				40547DE81CAEEAE5000F5383 /* RxAVPlayerItemTests.swift */,
-				40547DF01CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift */,
-				40B8016E1CAC6CF50009BF04 /* Info.plist */,
-				40547DEA1CAEF47F000F5383 /* TestHelpers.swift */,
-			);
-			path = RxAVPlayerTests;
 			sourceTree = "<group>";
 		};
 		BD3E022940559C91DB05505F /* Frameworks */ = {
@@ -146,7 +146,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40B801611CAC6CF50009BF04 /* RxAVPlayer.h in Headers */,
+				4040FFC71CB470100096BEC2 /* RxAVPlayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4040FFC61CB470100096BEC2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4040FFDB1CB472470096BEC2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405105401CB2F7B100D450B2 /* CMTime+Helpers.swift in Sources */,
-				4051053C1CB2F29000D450B2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
-				4051053D1CB2F29000D450B2 /* AVPlayer+Rx.swift in Sources */,
-				4051053E1CB2F29000D450B2 /* AVPlayerItem+Rx.swift in Sources */,
+				4040FFC11CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
+				4040FFC21CB470100096BEC2 /* AVPlayer+Rx.swift in Sources */,
+				4040FFC51CB470100096BEC2 /* CMTime+Helpers.swift in Sources */,
+				4040FFC31CB470100096BEC2 /* AVPlayerItem+Rx.swift in Sources */,
+				4040FFC41CB470100096BEC2 /* AVPlayerLayer+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,10 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40547DE91CAEEAE5000F5383 /* RxAVPlayerItemTests.swift in Sources */,
-				40547DF11CAF182D000F5383 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */,
-				40B8016D1CAC6CF50009BF04 /* RxAVPlayerTests.swift in Sources */,
-				40547DEB1CAEF47F000F5383 /* TestHelpers.swift in Sources */,
+				4040FFD81CB4723F0096BEC2 /* RxAVPlayerLayerTests.swift in Sources */,
+				4040FFDA1CB472440096BEC2 /* TestHelpers.swift in Sources */,
+				4040FFD91CB472420096BEC2 /* RxAVPlayerTests.swift in Sources */,
+				4040FFD71CB4723C0096BEC2 /* RxAVPlayerItemTests.swift in Sources */,
+				4040FFD61CB4723A0096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,8 +415,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RxAVPlayer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,8 +435,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RxAVPlayer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = RxAVPlayerTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVPlayerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,7 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = RxAVPlayerTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVPlayerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
