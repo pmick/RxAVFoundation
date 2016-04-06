@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import RxAVPlayer
+@testable import RxAVFoundation
 import AVFoundation
 
 class RxAVPlayerLayerTests: XCTestCase {

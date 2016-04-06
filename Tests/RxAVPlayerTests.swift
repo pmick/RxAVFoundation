@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import RxAVPlayer
+@testable import RxAVFoundation
 import AVFoundation
 import RxSwift
 import RxCocoa

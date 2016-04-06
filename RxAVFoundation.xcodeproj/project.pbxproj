@@ -12,14 +12,12 @@
 		4040FFC31CB470100096BEC2 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */; };
 		4040FFC41CB470100096BEC2 /* AVPlayerLayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBD1CB470100096BEC2 /* AVPlayerLayer+Rx.swift */; };
 		4040FFC51CB470100096BEC2 /* CMTime+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */; };
-		4040FFC61CB470100096BEC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4040FFBF1CB470100096BEC2 /* Info.plist */; };
 		4040FFC71CB470100096BEC2 /* RxAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4040FFC01CB470100096BEC2 /* RxAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4040FFD61CB4723A0096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCA1CB470170096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift */; };
 		4040FFD71CB4723C0096BEC2 /* RxAVPlayerItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCB1CB470170096BEC2 /* RxAVPlayerItemTests.swift */; };
 		4040FFD81CB4723F0096BEC2 /* RxAVPlayerLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCC1CB470170096BEC2 /* RxAVPlayerLayerTests.swift */; };
 		4040FFD91CB472420096BEC2 /* RxAVPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */; };
 		4040FFDA1CB472440096BEC2 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCE1CB470170096BEC2 /* TestHelpers.swift */; };
-		4040FFDB1CB472470096BEC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4040FFC91CB470170096BEC2 /* Info.plist */; };
 		40B801681CAC6CF50009BF04 /* RxAVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8015D1CAC6CF50009BF04 /* RxAVFoundation.framework */; };
 		7A48D462F1A35F83E4D55EF9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C53B1EBF9F5D20F7D4516B2 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -232,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4040FFC61CB470100096BEC2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +237,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4040FFDB1CB472470096BEC2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
