@@ -210,4 +210,33 @@ class RxAVPlayerItemTests: XCTestCase {
         
         XCTAssertTrue(called)
     }
+    
+    // MARK: LoadedTimeRanges
+    
+    func testPlayerItem_ShouldAllowObservationOfLoadedTimeRanges() {
+        let sut = AVPlayerItem(asset: asset)
+        var capturedRanges: [CMTimeRange]?
+        sut.rx_loadedTimeRanges
+            .subscribeNext { capturedRanges = $0 }
+            .dispose()
+        
+        XCTAssertEqual(capturedRanges!, [])
+    }
+    
+    func testPlayerItem_WhenLoadedTimeRangesHasATimeRange_ShouldProduceThatRange() {
+        class MockItem: AVPlayerItem {
+            let range = CMTimeRange(start: CMTime.zero, duration: CMTime(seconds: 5, preferredTimescale: 1))
+            private override var loadedTimeRanges: [NSValue] {
+                return [NSValue(CMTimeRange: range)]
+            }
+        }
+        
+        let sut = MockItem(asset: asset)
+        var capturedRanges: [CMTimeRange]?
+        sut.rx_loadedTimeRanges
+            .subscribeNext { capturedRanges = $0 }
+            .dispose()
+        
+        XCTAssertEqual(capturedRanges!, [sut.range])
+    }
 }

@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet var playerView: PlayerView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var player = AVPlayer()
-    var disposeBag = DisposeBag()
+    let player = AVPlayer()
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         playerView.playerLayer.player = player
         
         setupProgressObservation(item)
+        setupLoadingIndicatorObservation(item)
 
         player.rx_status
             .filter { $0 == .ReadyToPlay }
@@ -63,14 +64,26 @@ class ViewController: UIViewController {
             .subscribeNext { flag in
                 print("playback buffer empty: \(flag)")
             }.addDisposableTo(disposeBag)
+        item.rx_loadedTimeRanges
+            .subscribeNext { ranges in
+                print("loaded time ranges: \(ranges)")
+            }.addDisposableTo(disposeBag)
     }
     
     private func setupProgressObservation(item: AVPlayerItem) {
         let interval = CMTime(seconds: 0.05, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         player.rx_periodicTimeObserver(interval: interval)
             .map { self.progress($0, duration: item.duration) }
-            .bindTo(self.progressView.rx_progress)
+            .bindTo(progressView.rx_progress)
             .addDisposableTo(disposeBag)
+    }
+    
+    private func setupLoadingIndicatorObservation(item: AVPlayerItem) {
+        // loading indicator shows at the start until playback likely to keep up (or button tapped?)
+        
+        // if buffer empty shows loading
+        item.rx_playbackBufferEmpty
+        
     }
     
     private func progress(currentTime: CMTime, duration: CMTime) -> Float {

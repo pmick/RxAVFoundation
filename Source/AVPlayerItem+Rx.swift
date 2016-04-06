@@ -46,4 +46,10 @@ extension AVPlayerItem {
         return ns.rx_notification(AVPlayerItemDidPlayToEndTimeNotification,
                                   object: self)
     }
+    
+    public var rx_loadedTimeRanges: Observable<[CMTimeRange]> {
+        return self.rx_observe([NSValue].self, "loadedTimeRanges")
+            .map { $0 ?? [] }
+            .map { values in values.map { $0.CMTimeRangeValue } }
+    }
 }
