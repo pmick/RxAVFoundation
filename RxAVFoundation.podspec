@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/pmick/RxAVFoundation"
   s.license          = 'MIT'
   s.author           = { "Patrick Mick" => "patrickmick1@gmail.com" }
-  s.source           = { :git => "https://github.com/pmick/RxAVFoundation", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/pmick/RxAVFoundation.git", :tag => s.version.to_s }
   s.social_media_url = "http://twitter.com/patrickmick"
 
   s.platform     = :ios, '8.0'
