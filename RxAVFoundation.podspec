@@ -7,14 +7,13 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "RxAVPlayer"
+  s.name             = "RxAVFoundation"
   s.version          = "1.0.0"
-  s.summary          = "A progress view that leverages UIPresentationController rather than inserting views into your window/view hierarchy."
-  s.homepage         = "https://github.com/YayNext/ProgressController"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.summary          = "Functional Reactive (RxSwift) extensions for AVFoundations"
+  s.homepage         = "https://github.com/pmick/RxAVFoundation"
   s.license          = 'MIT'
   s.author           = { "Patrick Mick" => "patrickmick1@gmail.com" }
-  s.source           = { :git => "https://github.com/pmick/RxAVPlayer", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/pmick/RxAVFoundation", :tag => s.version.to_s }
   s.social_media_url = "http://twitter.com/patrickmick"
 
   s.platform     = :ios, '8.0'
@@ -22,8 +21,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Source/*.swift'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'RxSwift', '~> 2.3'
   s.dependency 'RxCocoa', '~> 2.3'
 end
