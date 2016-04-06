@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RxAVPlayer
+import RxAVFoundation
 import RxSwift
 import RxCocoa
 import AVFoundation
