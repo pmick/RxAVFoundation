@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var playerView: PlayerView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     var player = AVPlayer()
     var disposeBag = DisposeBag()
     
@@ -25,14 +27,11 @@ class ViewController: UIViewController {
         let item = AVPlayerItem(URL: NSURL(string: "https://i.imgur.com/9rGrj10.mp4")!)
         player.replaceCurrentItemWithPlayerItem(item)
         
-        playerView.playerLayer.rx_readyForDisplay
-            .subscribeNext { ready in
-                print("ready for display: \(ready)")
-            }.addDisposableTo(disposeBag)
-        
         playerView.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         playerView.playerLayer.player = player
         
+        setupProgressObservation(item)
+
         player.rx_status
             .filter { $0 == .ReadyToPlay }
             .subscribeNext { status in
@@ -46,12 +45,6 @@ class ViewController: UIViewController {
         player.rx_error
             .subscribeNext { error in
                 print("error: \(error)")
-            }.addDisposableTo(disposeBag)
-        
-        let interval = CMTime(seconds: 0.05, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        player.rx_periodicTimeObserver(interval: interval)
-            .subscribeNext { time in
-                self.progressView.progress = self.progress(time, duration: item.duration)
             }.addDisposableTo(disposeBag)
         
         item.rx_didPlayToEnd
@@ -70,6 +63,14 @@ class ViewController: UIViewController {
             .subscribeNext { flag in
                 print("playback buffer empty: \(flag)")
             }.addDisposableTo(disposeBag)
+    }
+    
+    private func setupProgressObservation(item: AVPlayerItem) {
+        let interval = CMTime(seconds: 0.05, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        player.rx_periodicTimeObserver(interval: interval)
+            .map { self.progress($0, duration: item.duration) }
+            .bindTo(self.progressView.rx_progress)
+            .addDisposableTo(disposeBag)
     }
     
     private func progress(currentTime: CMTime, duration: CMTime) -> Float {
