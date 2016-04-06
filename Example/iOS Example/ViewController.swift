@@ -31,42 +31,15 @@ class ViewController: UIViewController {
         playerView.playerLayer.player = player
         
         setupProgressObservation(item)
-        setupLoadingIndicatorObservation(item)
-
+        
+        // TODO: Build out this example by hiding loading indicator and pausing
+        // adding a gesture recognizer to pause/resume playback etc.
+        
         player.rx_status
             .filter { $0 == .ReadyToPlay }
             .subscribeNext { status in
                 print("item ready to play")
                 self.player.play()
-            }.addDisposableTo(disposeBag)
-        player.rx_rate
-            .subscribeNext { rate in
-                print("rate: \(rate)")
-            }.addDisposableTo(disposeBag)
-        player.rx_error
-            .subscribeNext { error in
-                print("error: \(error)")
-            }.addDisposableTo(disposeBag)
-        
-        item.rx_didPlayToEnd
-            .subscribeNext { _ in
-                print("did play to end")
-            }.addDisposableTo(disposeBag)
-        item.rx_playbackLikelyToKeepUp
-            .subscribeNext { flag in
-                print("playback likely to keep up: \(flag)")
-            }.addDisposableTo(disposeBag)
-        item.rx_playbackBufferFull
-            .subscribeNext { flag in
-                print("playback buffer full: \(flag)")
-            }.addDisposableTo(disposeBag)
-        item.rx_playbackBufferEmpty
-            .subscribeNext { flag in
-                print("playback buffer empty: \(flag)")
-            }.addDisposableTo(disposeBag)
-        item.rx_loadedTimeRanges
-            .subscribeNext { ranges in
-                print("loaded time ranges: \(ranges)")
             }.addDisposableTo(disposeBag)
     }
     
@@ -76,14 +49,6 @@ class ViewController: UIViewController {
             .map { self.progress($0, duration: item.duration) }
             .bindTo(progressView.rx_progress)
             .addDisposableTo(disposeBag)
-    }
-    
-    private func setupLoadingIndicatorObservation(item: AVPlayerItem) {
-        // loading indicator shows at the start until playback likely to keep up (or button tapped?)
-        
-        // if buffer empty shows loading
-        item.rx_playbackBufferEmpty
-        
     }
     
     private func progress(currentTime: CMTime, duration: CMTime) -> Float {
