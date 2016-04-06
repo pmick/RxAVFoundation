@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     }
     
     private func progress(currentTime: CMTime, duration: CMTime) -> Float {
-        if duration.isValid || currentTime.isValid {
+        if !duration.isValid || !currentTime.isValid {
             return 0
         }
         
