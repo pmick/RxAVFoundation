@@ -52,18 +52,18 @@ class ViewController: UIViewController {
     }
     
     private func progress(currentTime: CMTime, duration: CMTime) -> Float {
-        if CMTIME_IS_INVALID(duration) || CMTIME_IS_INVALID(currentTime) {
+        if duration.isValid || currentTime.isValid {
             return 0
         }
         
-        let totalSeconds = Float(CMTimeGetSeconds(duration))
-        let currentSeconds = Float(CMTimeGetSeconds(currentTime))
+        let totalSeconds = duration.seconds
+        let currentSeconds = currentTime.seconds
         
-        if !isfinite(totalSeconds) || !isfinite(currentSeconds) {
+        if !totalSeconds.isFinite || !currentSeconds.isFinite {
             return 0
         }
 
-        let p = min(currentSeconds/totalSeconds, 1)
+        let p = Float(min(currentSeconds/totalSeconds, 1))
         return p
     }
 }
