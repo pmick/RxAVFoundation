@@ -76,6 +76,7 @@
 		4040FFB91CB470100096BEC2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4040FFC81CB470170096BEC2 /* Tests */,
 				4040FFBA1CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift */,
 				4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */,
 				4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */,
@@ -97,14 +98,14 @@
 				4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */,
 				4040FFCE1CB470170096BEC2 /* TestHelpers.swift */,
 			);
-			path = Tests;
+			name = Tests;
+			path = ../Tests;
 			sourceTree = "<group>";
 		};
 		40B801531CAC6CF50009BF04 = {
 			isa = PBXGroup;
 			children = (
 				4040FFB91CB470100096BEC2 /* Source */,
-				4040FFC81CB470170096BEC2 /* Tests */,
 				40B8015E1CAC6CF50009BF04 /* Products */,
 				FB1023659BCA866FEFC77F26 /* Pods */,
 				BD3E022940559C91DB05505F /* Frameworks */,

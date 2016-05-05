@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/patrickmick1/Documents/Developer/exploration/RxAVPlayer/RxAVFoundation.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:RxAVFoundation.xcodeproj">
    </FileRef>
 </Workspace>
