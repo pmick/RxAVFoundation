@@ -11,41 +11,41 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-extension AVPlayer {
-    public var rx_rate: Observable<Float> {
-        return self.rx_observe(Float.self, "rate")
+extension Reactive where Base: AVPlayer {
+    public var rate: Observable<Float> {
+        return self.observe(Float.self, #keyPath(AVPlayer.rate))
             .map { $0 ?? 0 }
     }
     
-    public var rx_status: Observable<AVPlayerStatus> {
-        return self.rx_observe(AVPlayerStatus.self, "status")
-            .map { $0 ?? .Unknown }
+    public var status: Observable<AVPlayerStatus> {
+        return self.observe(AVPlayerStatus.self, #keyPath(AVPlayer.status))
+            .map { $0 ?? .unknown }
     }
     
     // TODO: This is directly related to status. Should these be wrapped up into one?
     // potentially an enum that wraps status with an associated error for Failed status?
-    public var rx_error: Observable<NSError?> {
-        return self.rx_observe(NSError.self, "error")
+    public var error: Observable<NSError?> {
+        return self.observe(NSError.self, #keyPath(AVPlayer.error))
     }
     
-    public func rx_periodicTimeObserver(interval interval: CMTime) -> Observable<CMTime> {
+    public func periodicTimeObserver(interval: CMTime) -> Observable<CMTime> {
         return Observable.create { observer in
-            let t = self.addPeriodicTimeObserverForInterval(interval, queue: nil) { time in
-                observer.on(.Next(time))
+            let t = self.base.addPeriodicTimeObserver(forInterval: interval, queue: nil) { time in
+                observer.onNext(time)
             }
             
-            return AnonymousDisposable { self.removeTimeObserver(t) }
+            return Disposables.create { self.base.removeTimeObserver(t) }
         }
     }
     
-    public func rx_boundaryTimeObserver(times times: [CMTime]) -> Observable<Void> {
+    public func boundaryTimeObserver(times: [CMTime]) -> Observable<Void> {
         return Observable.create { observer in
-            let timeValues = times.map() { NSValue(CMTime: $0) }
-            let t = self.addBoundaryTimeObserverForTimes(timeValues, queue: nil) {
-                observer.on(.Next(()))
+            let timeValues = times.map() { NSValue(time: $0) }
+            let t = self.base.addBoundaryTimeObserver(forTimes: timeValues, queue: nil) {
+                observer.onNext()
             }
             
-            return AnonymousDisposable { self.removeTimeObserver(t) }
+            return Disposables.create { self.base.removeTimeObserver(t) }
         }
     }
 }

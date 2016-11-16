@@ -11,18 +11,18 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-extension AVAsynchronousKeyValueLoading {
-    public func rx_loadValuesForKeys(keys: [String]) -> Observable<Void> {
+extension Reactive where Base: AVAsynchronousKeyValueLoading {
+    public func loadValuesForKeys(_ keys: [String]) -> Observable<Void> {
         return Observable.create { observer in
-            self.loadValuesAsynchronouslyForKeys(keys) {
+            self.base.loadValuesAsynchronously(forKeys: keys) {
                 // TODO: Test statusOfValueForKey for every key that was loaded and
                 // return some kind of error model if any keys failed to load
                 
-                observer.on(.Next(()))
-                observer.on(.Completed)
+                observer.onNext(())
+                observer.onCompleted()
             }
             
-            return NopDisposable.instance
+            return Disposables.create()
         }
     }
 }
