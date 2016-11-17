@@ -1,7 +1,6 @@
 dependencies:
   override:
-    - bundle install
-    - bundle exec pod install
+    - pod install
 machine:
   xcode:
     version: 8.1
