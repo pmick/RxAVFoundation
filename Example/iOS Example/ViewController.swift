@@ -24,30 +24,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let item = AVPlayerItem(URL: NSURL(string: "https://i.imgur.com/9rGrj10.mp4")!)
-        player.replaceCurrentItemWithPlayerItem(item)
+        let item = AVPlayerItem(url: URL(string: "https://i.imgur.com/9rGrj10.mp4")!)
+        player.replaceCurrentItem(with: item)
         
         playerView.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         playerView.playerLayer.player = player
         
-        setupProgressObservation(item)
+        setupProgressObservation(item: item)
         
         // TODO: Build out this example by hiding loading indicator and pausing
         // adding a gesture recognizer to pause/resume playback etc.
         
-        player.rx_status
-            .filter { $0 == .ReadyToPlay }
-            .subscribeNext { status in
+        player.rx.status
+            .filter { $0 == .readyToPlay }
+            .subscribe(onNext: { [unowned self] status in
                 print("item ready to play")
                 self.player.play()
-            }.addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
     }
     
     private func setupProgressObservation(item: AVPlayerItem) {
         let interval = CMTime(seconds: 0.05, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        player.rx_periodicTimeObserver(interval: interval)
-            .map { self.progress($0, duration: item.duration) }
-            .bindTo(progressView.rx_progress)
+        player.rx.periodicTimeObserver(interval: interval)
+            .map { [unowned self] in self.progress(currentTime: $0, duration: item.duration) }
+            .bindTo(progressView.rx.progress)
             .addDisposableTo(disposeBag)
     }
     

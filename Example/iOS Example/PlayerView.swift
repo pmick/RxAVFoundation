@@ -14,7 +14,7 @@ class PlayerView: UIView {
         return self.layer as! AVPlayerLayer
     }
     
-    override class func layerClass() -> AnyClass {
+    override class var layerClass: AnyClass {
         return AVPlayerLayer.self
     }
 }

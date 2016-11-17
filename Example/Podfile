@@ -1,3 +1,5 @@
 use_frameworks!
 
-pod 'RxAVFoundation', :path => '../'
+target 'iOS Example' do
+  pod 'RxAVFoundation', :path => '../'
+end
