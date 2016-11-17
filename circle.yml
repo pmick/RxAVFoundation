@@ -1,9 +1,6 @@
-dependencies:
-  override:
-    - pod install
 machine:
   xcode:
     version: 8.1
 test:
   override:
-    - scan -s RxAVFoundation -o $CIRCLE_TEST_REPORTS
+    - scan -s RxAVFoundation -o $CIRCLE_TEST_REPORTS/junit/
