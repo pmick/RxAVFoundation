@@ -17,15 +17,15 @@ class RxAVPlayerRateTests: XCTestCase {
     var capturedRate: Float?
 
     func testObserving_ShouldReturnTheDefaultRateOfZero() {
-        player.rx_rate
-            .subscribeNext { self.capturedRate = $0 }
+        player.rx.rate
+            .subscribe(onNext: { self.capturedRate = $0 })
             .dispose()
         
         XCTAssertEqual(capturedRate, 0)
     }
     
     func testObservingAPlayerWithARateOfOne_ShouldReturnOne() {
-        let sut = player.rx_rate.subscribeNext() { self.capturedRate = $0 }
+        let sut = player.rx.rate.subscribe(onNext: { self.capturedRate = $0 })
         player.rate = 1
         sut.dispose()
         
@@ -37,30 +37,30 @@ class RxAVPlayerStatusTests: XCTestCase {
     func testObservingStatus_ShouldReturnTheDefaultUnknown() {
         let player = AVPlayer()
         var capturedStatus: AVPlayerStatus?
-        player.rx_status
-            .subscribeNext { capturedStatus = $0 }
+        player.rx.status
+            .subscribe(onNext: { capturedStatus = $0 })
             .dispose()
         
-        XCTAssertEqual(capturedStatus, AVPlayerStatus.Unknown)
+        XCTAssertEqual(capturedStatus, .unknown)
     }
     
     func testObservingStatus_WhenItChangesToReadyToPlay_ShouldUpdateTheObserver() {
         // Makes it so that we can update the readonly property
         class MockPlayer: AVPlayer {
-            var changeableStatus: AVPlayerStatus = .Unknown {
-                willSet { self.willChangeValueForKey("status") }
-                didSet { self.didChangeValueForKey("status") }
+            var changeableStatus: AVPlayerStatus = .unknown {
+                willSet { self.willChangeValue(forKey: "status") }
+                didSet { self.didChangeValue(forKey: "status") }
             }
-            private override var status: AVPlayerStatus { return changeableStatus }
+            fileprivate override var status: AVPlayerStatus { return changeableStatus }
         }
         
         let player = MockPlayer()
         var capturedStatus: AVPlayerStatus?
-        let sut = player.rx_status.subscribeNext { capturedStatus = $0 }
-        player.changeableStatus = .ReadyToPlay
+        let sut = player.rx.status.subscribe(onNext: { capturedStatus = $0 })
+        player.changeableStatus = .readyToPlay
         sut.dispose()
         
-        XCTAssertEqual(capturedStatus, AVPlayerStatus.ReadyToPlay)
+        XCTAssertEqual(capturedStatus, .readyToPlay)
     }
 }
 
@@ -68,8 +68,8 @@ class RxAVPlayerErrorTests: XCTestCase {
     func testObservingStatus_ShouldReturnTheDefaultUnknown() {
         let player = AVPlayer()
         var capturedError: NSError?
-        player.rx_error
-            .subscribeNext { capturedError = $0 }
+        player.rx.error
+            .subscribe(onNext: { capturedError = $0 })
             .dispose()
         
         XCTAssertNil(capturedError)
@@ -79,19 +79,19 @@ class RxAVPlayerErrorTests: XCTestCase {
         // Makes it so that we can update the readonly property
         class MockPlayer: AVPlayer {
             var changeableError: NSError? = nil {
-                willSet { self.willChangeValueForKey("error") }
-                didSet { self.didChangeValueForKey("error") }
+                willSet { self.willChangeValue(forKey: "error") }
+                didSet { self.didChangeValue(forKey: "error") }
             }
-            private override var error: NSError? { return changeableError }
+            fileprivate override var error: Error? { return changeableError }
         }
         
         let player = MockPlayer()
         var capturedError: NSError?
-        let sut = player.rx_error.subscribeNext { capturedError = $0 }
-        player.changeableError = NSError.Test
+        let sut = player.rx.error.subscribe(onNext: { capturedError = $0 })
+        player.changeableError = NSError.test
         sut.dispose()
         
-        XCTAssertEqual(capturedError, NSError.Test)
+        XCTAssertEqual(capturedError, NSError.test)
     }
 }
 
@@ -100,18 +100,18 @@ class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
         class MockPlayer: AVPlayer {
             var interval: CMTime!
             
-            private override func addPeriodicTimeObserverForInterval(interval: CMTime, queue: dispatch_queue_t?, usingBlock block: (CMTime) -> Void) -> AnyObject {
+            fileprivate override func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue?, using block: @escaping (CMTime) -> Void) -> Any {
                 self.interval = interval
                 return ""
             }
             
-            private override func removeTimeObserver(observer: AnyObject) { }
+            fileprivate override func removeTimeObserver(_ observer: Any) { }
         }
         
         let player = MockPlayer()
         let interval = CMTime(seconds: 1, preferredTimescale: CMTimeScale(1))
-        player.rx_periodicTimeObserver(interval: interval)
-            .subscribeNext { time in }
+        player.rx.periodicTimeObserver(interval: interval)
+            .subscribe(onNext: { time in })
             .dispose()
         
         XCTAssertEqual(player.interval, interval)
@@ -119,19 +119,19 @@ class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
     
     func testPeriodicTimeObserver_NotifiesObserversWhenItsBlockIsCalled() {
         class MockPlayer: AVPlayer {
-            private override func addPeriodicTimeObserverForInterval(interval: CMTime, queue: dispatch_queue_t?, usingBlock block: (CMTime) -> Void) -> AnyObject {
+            fileprivate override func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue?, using block: @escaping (CMTime) -> Void) -> Any {
                 block(CMTime(seconds: 2, preferredTimescale: CMTimeScale(1)))
                 return ""
             }
             
-            private override func removeTimeObserver(observer: AnyObject) { }
+            fileprivate override func removeTimeObserver(_ observer: Any) { }
         }
         
         let player = MockPlayer()
         var capturedTime: CMTime!
         let interval = CMTime(seconds: 1, preferredTimescale: CMTimeScale(1))
-        player.rx_periodicTimeObserver(interval: interval)
-            .subscribeNext { time in capturedTime = time }
+        player.rx.periodicTimeObserver(interval: interval)
+            .subscribe(onNext: { time in capturedTime = time })
             .dispose()
         
         let time = CMTime(seconds: 2, preferredTimescale: CMTimeScale(1))
@@ -143,19 +143,19 @@ class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
         class MockPlayer: AVPlayer {
             var capturedRemove: String!
             
-            private override func addPeriodicTimeObserverForInterval(interval: CMTime, queue: dispatch_queue_t?, usingBlock block: (CMTime) -> Void) -> AnyObject {
+            fileprivate override func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue?, using block: @escaping (CMTime) -> Void) -> Any {
                 return "test"
             }
             
-            private override func removeTimeObserver(observer: AnyObject) {
+            fileprivate override func removeTimeObserver(_ observer: Any) {
                 capturedRemove = observer as! String
             }
         }
         
         let player = MockPlayer()
         let interval = CMTime(seconds: 1, preferredTimescale: CMTimeScale(1))
-        player.rx_periodicTimeObserver(interval: interval)
-            .subscribeNext { time in }
+        player.rx.periodicTimeObserver(interval: interval)
+            .subscribe(onNext: { time in })
             .dispose()
         
         XCTAssertEqual("test", player.capturedRemove)
@@ -167,18 +167,18 @@ class RxAVPlayerPeriodicBoundaryObserverTests: XCTestCase {
         class MockPlayer: AVPlayer {
             var times: [CMTime]!
             
-            private override func addBoundaryTimeObserverForTimes(times: [NSValue], queue: dispatch_queue_t?, usingBlock block: () -> Void) -> AnyObject {
-                self.times = times.map { $0.CMTimeValue }
+            fileprivate override func addBoundaryTimeObserver(forTimes times: [NSValue], queue: DispatchQueue?, using block: @escaping () -> Void) -> Any {
+                self.times = times.map { $0.timeValue }
                 return ""
             }
             
-            private override func removeTimeObserver(observer: AnyObject) { }
+            fileprivate override func removeTimeObserver(_ observer: Any) { }
         }
         
         let player = MockPlayer()
         let time = CMTime(seconds: 1, preferredTimescale: CMTimeScale(1))
-        player.rx_boundaryTimeObserver(times: [time])
-            .subscribeNext { }
+        player.rx.boundaryTimeObserver(times: [time])
+            .subscribe(onNext: { })
             .dispose()
         
         XCTAssertEqual(player.times.first, time)
@@ -186,19 +186,19 @@ class RxAVPlayerPeriodicBoundaryObserverTests: XCTestCase {
     
     func testBoundaryTimeObserver_NotifiesObserversWhenItsBlockIsCalled() {
         class MockPlayer: AVPlayer {
-            private override func addBoundaryTimeObserverForTimes(times: [NSValue], queue: dispatch_queue_t?, usingBlock block: () -> Void) -> AnyObject {
+            fileprivate override func addBoundaryTimeObserver(forTimes times: [NSValue], queue: DispatchQueue?, using block: @escaping () -> Void) -> Any {
                 block()
                 return ""
             }
             
-            private override func removeTimeObserver(observer: AnyObject) { }
+            fileprivate override func removeTimeObserver(_ observer: Any) { }
         }
         
         let player = MockPlayer()
         let time = CMTime(seconds: 1, preferredTimescale: CMTimeScale(1))
         var closureCalled = false
-        player.rx_boundaryTimeObserver(times: [time])
-            .subscribeNext { closureCalled = true }
+        player.rx.boundaryTimeObserver(times: [time])
+            .subscribe(onNext: { closureCalled = true })
             .dispose()
         
         XCTAssertTrue(closureCalled)
@@ -208,19 +208,19 @@ class RxAVPlayerPeriodicBoundaryObserverTests: XCTestCase {
         class MockPlayer: AVPlayer {
             var capturedRemove: String!
             
-            private override func addBoundaryTimeObserverForTimes(times: [NSValue], queue: dispatch_queue_t?, usingBlock block: () -> Void) -> AnyObject {
+            fileprivate override func addBoundaryTimeObserver(forTimes times: [NSValue], queue: DispatchQueue?, using block: @escaping () -> Void) -> Any {
                 return "test"
             }
             
-            private override func removeTimeObserver(observer: AnyObject) {
+            fileprivate override func removeTimeObserver(_ observer: Any) {
                 capturedRemove = observer as! String
             }
         }
         
         let player = MockPlayer()
         let time = CMTime(seconds: 1, preferredTimescale: CMTimeScale(1))
-        player.rx_boundaryTimeObserver(times: [time])
-            .subscribeNext { }
+        player.rx.boundaryTimeObserver(times: [time])
+            .subscribe(onNext: { })
             .dispose()
         
         XCTAssertEqual("test", player.capturedRemove)

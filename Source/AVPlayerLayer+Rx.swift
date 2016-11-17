@@ -11,9 +11,9 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-extension AVPlayerLayer {
-    public var rx_readyForDisplay: Observable<Bool> {
-        return self.rx_observe(Bool.self, "readyForDisplay")
+extension Reactive where Base: AVPlayerLayer {
+    public var readyForDisplay: Observable<Bool> {
+        return self.observe(Bool.self, #keyPath(AVPlayerLayer.readyForDisplay))
             .map { $0 ?? false }
     }
 }

@@ -14,8 +14,8 @@ class RxAVPlayerLayerTests: XCTestCase {
     func testPlayerLayer_ShouldAllowObservationOfReadyForDisplay() {
         let sut = AVPlayerLayer()
         var capturedFlag: Bool!
-        sut.rx_readyForDisplay
-            .subscribeNext { capturedFlag = $0 }
+        sut.rx.readyForDisplay
+            .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
         XCTAssertFalse(capturedFlag)
@@ -35,7 +35,7 @@ class RxAVPlayerLayerTests: XCTestCase {
 //        
 //        let sut = MockLayer()
 //        var capturedFlag = false
-//        sut.rx_readyForDisplay
+//        sut.rx.readyForDisplay
 //            .subscribeNext { capturedFlag = $0 }
 //            .dispose()
 //        

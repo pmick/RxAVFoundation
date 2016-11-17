@@ -11,34 +11,34 @@ import XCTest
 import AVFoundation
 
 class RxAVPlayerItemTests: XCTestCase {
-    let asset = AVURLAsset(URL: NSURL(string: "www.google.com")!)
+    let asset = AVURLAsset(url: URL(string: "www.google.com")!)
     
     //MARK: Status
     
     func testPlayerItem_ShouldAllowObservationOfStatus() {
         let sut = AVPlayerItem(asset: asset)
         var capturedStatus: AVPlayerItemStatus?
-        sut.rx_status
-            .subscribeNext { capturedStatus = $0 }
+        sut.rx.status
+            .subscribe(onNext: { capturedStatus = $0 })
             .dispose()
         
-        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.Unknown)
+        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.unknown)
     }
     
     func testPlayerItem_ShouldUpdateRxStatus() {
         class MockItem: AVPlayerItem {
-            private override var status: AVPlayerItemStatus {
-                return .ReadyToPlay
+            fileprivate override var status: AVPlayerItemStatus {
+                return .readyToPlay
             }
         }
         
         let sut = MockItem(asset: asset)
         var capturedStatus: AVPlayerItemStatus?
-        sut.rx_status
-            .subscribeNext { capturedStatus = $0 }
+        sut.rx.status
+            .subscribe(onNext: { capturedStatus = $0 })
             .dispose()
         
-        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.ReadyToPlay)
+        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.readyToPlay)
     }
     
     //MARK: Duration
@@ -46,11 +46,11 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldAllowObservationOfDuration() {
         let sut = AVPlayerItem(asset: asset)
         var capturedDuration: CMTime?
-        sut.rx_duration
-            .subscribeNext { capturedDuration = $0 }
+        sut.rx.duration
+            .subscribe(onNext: { capturedDuration = $0 })
             .dispose()
         
-        XCTAssertTrue(CMTimeCompare(capturedDuration!, kCMTimeZero) == 0)
+        XCTAssertEqual(capturedDuration?.value, CMTimeValue.allZeros)
     }
 
     func testPlayerItem_ShouldUpdateRxDuration() {
@@ -58,15 +58,15 @@ class RxAVPlayerItemTests: XCTestCase {
             // Using flag to test because player item does something odd and doesn't
             // return our mocked 5 second duration even though it's accessed
             var durationChecked = false
-            private override var duration: CMTime {
+            fileprivate override var duration: CMTime {
                 durationChecked = true
                 return CMTime(seconds: 5, preferredTimescale: 1)
             }
         }
         
         let sut = MockItem(asset: asset)
-        sut.rx_duration
-            .subscribeNext { duration in }
+        sut.rx.duration
+            .subscribe(onNext: { duration in })
             .dispose()
         
         XCTAssertTrue(sut.durationChecked)
@@ -77,8 +77,8 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldAllowObservationOfError() {
         let sut = AVPlayerItem(asset: asset)
         var capturedError: NSError?
-        sut.rx_error
-            .subscribeNext { capturedError = $0 }
+        sut.rx.error
+            .subscribe(onNext: { capturedError = $0 })
             .dispose()
         
         XCTAssertNil(capturedError)
@@ -86,18 +86,18 @@ class RxAVPlayerItemTests: XCTestCase {
     
     func testPlayerItem_ShouldUpdateRxError() {
         class MockItem: AVPlayerItem {
-            private override var error: NSError? {
-                return NSError.Test
+            fileprivate override var error: Error? {
+                return NSError.test
             }
         }
         
         let sut = MockItem(asset: asset)
         var capturedError: NSError?
-        sut.rx_error
-            .subscribeNext { capturedError = $0 }
+        sut.rx.error
+            .subscribe(onNext: { capturedError = $0 })
             .dispose()
         
-        XCTAssertEqual(capturedError, NSError.Test)
+        XCTAssertEqual(capturedError, NSError.test)
     }
     
     // MARK: PlaybackLikelyToKeepUp
@@ -105,8 +105,8 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldAllowObservationOfPlaybackLikelyToKeepUp() {
         let sut = AVPlayerItem(asset: asset)
         var capturedFlag: Bool!
-        sut.rx_playbackLikelyToKeepUp
-            .subscribeNext { capturedFlag = $0 }
+        sut.rx.playbackLikelyToKeepUp
+            .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
         XCTAssertFalse(capturedFlag)
@@ -114,15 +114,15 @@ class RxAVPlayerItemTests: XCTestCase {
     
     func testPlayerItem_ShouldUpdateRxPlaybackLikelyToKeepUp() {
         class MockItem: AVPlayerItem {
-            private override var playbackLikelyToKeepUp: Bool {
+            fileprivate override var isPlaybackLikelyToKeepUp: Bool {
                 return true
             }
         }
         
         let sut = MockItem(asset: asset)
         var capturedFlag: Bool!
-        sut.rx_playbackLikelyToKeepUp
-            .subscribeNext { capturedFlag = $0 }
+        sut.rx.playbackLikelyToKeepUp
+            .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
         XCTAssertTrue(capturedFlag)
@@ -133,8 +133,8 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldAllowObservationOfPlaybackBufferFull() {
         let sut = AVPlayerItem(asset: asset)
         var capturedFlag: Bool!
-        sut.rx_playbackBufferFull
-            .subscribeNext { capturedFlag = $0 }
+        sut.rx.playbackBufferFull
+            .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
         XCTAssertFalse(capturedFlag)
@@ -142,15 +142,15 @@ class RxAVPlayerItemTests: XCTestCase {
     
     func testPlayerItem_ShouldUpdateRxPlaybackBufferFull() {
         class MockItem: AVPlayerItem {
-            private override var playbackBufferFull: Bool {
+            fileprivate override var isPlaybackBufferFull: Bool {
                 return true
             }
         }
         
         let sut = MockItem(asset: asset)
         var capturedFlag: Bool!
-        sut.rx_playbackBufferFull
-            .subscribeNext { capturedFlag = $0 }
+        sut.rx.playbackBufferFull
+            .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
         XCTAssertTrue(capturedFlag)
@@ -161,24 +161,24 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldAllowObservationOfPlaybackBufferEmpty() {
         let sut = AVPlayerItem(asset: asset)
         var capturedFlag: Bool!
-        sut.rx_playbackBufferEmpty
-            .subscribeNext { capturedFlag = $0 }
+        sut.rx.playbackBufferEmpty
+            .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
-        XCTAssertFalse(capturedFlag)
+        XCTAssertTrue(capturedFlag)
     }
     
     func testPlayerItem_ShouldUpdateRxPlaybackBufferEmpty() {
         class MockItem: AVPlayerItem {
-            private override var playbackBufferEmpty: Bool {
+            fileprivate override var isPlaybackBufferEmpty: Bool {
                 return true
             }
         }
         
         let sut = MockItem(asset: asset)
         var capturedFlag: Bool!
-        sut.rx_playbackBufferEmpty
-            .subscribeNext { capturedFlag = $0 }
+        sut.rx.playbackBufferEmpty
+            .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
         XCTAssertTrue(capturedFlag)
@@ -189,8 +189,8 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldAllowObservationOfDidReachEnd() {
         let sut = AVPlayerItem(asset: asset)
         var called: Bool = false
-        sut.rx_didPlayToEnd
-            .subscribeNext { note in called = true }
+        sut.rx.didPlayToEnd
+            .subscribe(onNext: { note in called = true })
             .dispose()
         
         XCTAssertFalse(called)
@@ -199,12 +199,11 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldUpdateRxDidPlayToEnd() {
         let sut = AVPlayerItem(asset: asset)
         var called: Bool = false
-        let observer = sut.rx_didPlayToEnd
-            .subscribeNext { note in called = true }
+        let observer = sut.rx.didPlayToEnd
+            .subscribe(onNext: { note in called = true })
         
-        let ns = NSNotificationCenter.defaultCenter()
-        ns.postNotificationName(AVPlayerItemDidPlayToEndTimeNotification,
-                                object: sut)
+        let ns = NotificationCenter.default
+        ns.post(name: .AVPlayerItemDidPlayToEndTime, object: sut)
         
         observer.dispose()
         
@@ -216,8 +215,8 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_ShouldAllowObservationOfLoadedTimeRanges() {
         let sut = AVPlayerItem(asset: asset)
         var capturedRanges: [CMTimeRange]?
-        sut.rx_loadedTimeRanges
-            .subscribeNext { capturedRanges = $0 }
+        sut.rx.loadedTimeRanges
+            .subscribe(onNext: { capturedRanges = $0 })
             .dispose()
         
         XCTAssertEqual(capturedRanges!, [])
@@ -226,15 +225,15 @@ class RxAVPlayerItemTests: XCTestCase {
     func testPlayerItem_WhenLoadedTimeRangesHasATimeRange_ShouldProduceThatRange() {
         class MockItem: AVPlayerItem {
             let range = CMTimeRange(start: CMTime.zero, duration: CMTime(seconds: 5, preferredTimescale: 1))
-            private override var loadedTimeRanges: [NSValue] {
-                return [NSValue(CMTimeRange: range)]
+            fileprivate override var loadedTimeRanges: [NSValue] {
+                return [NSValue(timeRange: range)]
             }
         }
         
         let sut = MockItem(asset: asset)
         var capturedRanges: [CMTimeRange]?
-        sut.rx_loadedTimeRanges
-            .subscribeNext { capturedRanges = $0 }
+        sut.rx.loadedTimeRanges
+            .subscribe(onNext: { capturedRanges = $0 })
             .dispose()
         
         XCTAssertEqual(capturedRanges!, [sut.range])

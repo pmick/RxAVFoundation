@@ -11,45 +11,44 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-extension AVPlayerItem {
-    public var rx_status: Observable<AVPlayerItemStatus> {
-        return self.rx_observe(AVPlayerItemStatus.self, "status")
-            .map { $0 ?? .Unknown }
+extension Reactive where Base: AVPlayerItem {
+    public var status: Observable<AVPlayerItemStatus> {
+        return self.observe(AVPlayerItemStatus.self, #keyPath(AVPlayerItem.status))
+            .map { $0 ?? .unknown }
     }
     
-    public var rx_duration: Observable<CMTime> {
-        return self.rx_observe(CMTime.self, "duration")
-            .map { $0 ?? CMTime.zero }
+    public var duration: Observable<CMTime> {
+        return self.observe(CMTime.self, #keyPath(AVPlayerItem.duration))
+            .map { $0 ?? .zero }
     }
     
-    public var rx_error: Observable<NSError?> {
-        return self.rx_observe(NSError.self, "error")
+    public var error: Observable<NSError?> {
+        return self.observe(NSError.self, #keyPath(AVPlayerItem.error))
     }
     
-    public var rx_playbackLikelyToKeepUp: Observable<Bool> {
-        return self.rx_observe(Bool.self, "playbackLikelyToKeepUp")
+    public var playbackLikelyToKeepUp: Observable<Bool> {
+        return self.observe(Bool.self, #keyPath(AVPlayerItem.isPlaybackLikelyToKeepUp))
             .map { $0 ?? false }
     }
     
-    public var rx_playbackBufferFull: Observable<Bool> {
-        return self.rx_observe(Bool.self, "playbackBufferFull")
+    public var playbackBufferFull: Observable<Bool> {
+        return self.observe(Bool.self, #keyPath(AVPlayerItem.isPlaybackBufferFull))
             .map { $0 ?? false }
     }
     
-    public var rx_playbackBufferEmpty: Observable<Bool> {
-        return self.rx_observe(Bool.self, "playbackBufferEmpty")
+    public var playbackBufferEmpty: Observable<Bool> {
+        return self.observe(Bool.self, #keyPath(AVPlayerItem.isPlaybackBufferEmpty))
             .map { $0 ?? false }
     }
     
-    public var rx_didPlayToEnd: Observable<NSNotification> {
-        let ns = NSNotificationCenter.defaultCenter()
-        return ns.rx_notification(AVPlayerItemDidPlayToEndTimeNotification,
-                                  object: self)
+    public var didPlayToEnd: Observable<Notification> {
+        let ns = NotificationCenter.default
+        return ns.rx.notification(.AVPlayerItemDidPlayToEndTime, object: base)
     }
     
-    public var rx_loadedTimeRanges: Observable<[CMTimeRange]> {
-        return self.rx_observe([NSValue].self, "loadedTimeRanges")
+    public var loadedTimeRanges: Observable<[CMTimeRange]> {
+        return self.observe([NSValue].self, #keyPath(AVPlayerItem.loadedTimeRanges))
             .map { $0 ?? [] }
-            .map { values in values.map { $0.CMTimeRangeValue } }
+            .map { values in values.map { $0.timeRangeValue } }
     }
 }

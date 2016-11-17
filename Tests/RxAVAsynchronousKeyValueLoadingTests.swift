@@ -13,16 +13,16 @@ class RxAVAsynchronousKeyValueLoadingTests: XCTestCase {
     func testCallingLoadValuesForKeys_CallsTheAsynchronousLoadingFunction() {
         class MockAsset: AVURLAsset {
             var calledWithKeys: [String]!
-            private override func loadValuesAsynchronouslyForKeys(keys: [String], completionHandler handler: (() -> Void)?) {
+            fileprivate override func loadValuesAsynchronously(forKeys keys: [String], completionHandler handler: (() -> Void)?) {
                 self.calledWithKeys = keys
             }
         }
         
-        let asset = MockAsset(URL: NSURL.Test)
+        let asset = MockAsset(url: URL.test)
         
         let keys = ["duration"]
-        asset.rx_loadValuesForKeys(keys)
-            .subscribeNext { }
+        asset.rx.loadValuesForKeys(keys)
+            .subscribe(onNext: {})
             .dispose()
         
         XCTAssertEqual(asset.calledWithKeys, keys)
@@ -30,20 +30,20 @@ class RxAVAsynchronousKeyValueLoadingTests: XCTestCase {
     
     func testNextAndCompletedShouldBeEmitted_WhenCompletionIsCalled() {
         class MockAsset: AVURLAsset {
-            private override func loadValuesAsynchronouslyForKeys(keys: [String], completionHandler handler: (() -> Void)?) {
+            fileprivate override func loadValuesAsynchronously(forKeys keys: [String], completionHandler handler: (() -> Void)?) {
                 handler!()
             }
         }
         
-        let asset = MockAsset(URL: NSURL.Test)
+        let asset = MockAsset(url: URL.test)
         var nextCalled = false
         var completedCalled = false
         
         let keys = ["duration"]
-        let o = asset.rx_loadValuesForKeys(keys)
-        o.subscribeNext { nextCalled = true }
+        let o = asset.rx.loadValuesForKeys(keys)
+        o.subscribe(onNext: { nextCalled = true })
             .dispose()
-        o.subscribeCompleted() { completedCalled = true }
+        o.subscribe(onCompleted: { completedCalled = true })
             .dispose()
         
         XCTAssertTrue(nextCalled)
