@@ -6,4 +6,4 @@ machine:
     version: 8.1
 test:
   override:
-    - scan -s RxAVFoundation
+    - scan -s RxAVFoundation -o $CIRCLE_TEST_REPORTS
