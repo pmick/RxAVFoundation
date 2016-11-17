@@ -1,3 +1,6 @@
 machine:
   xcode:
     version: 8.1
+test:
+  override:
+    - scan -s RxAVFoundation
