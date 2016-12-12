@@ -21,6 +21,8 @@
 		4040FFD91CB472420096BEC2 /* RxAVPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */; };
 		4040FFDA1CB472440096BEC2 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCE1CB470170096BEC2 /* TestHelpers.swift */; };
 		40B801681CAC6CF50009BF04 /* RxAVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8015D1CAC6CF50009BF04 /* RxAVFoundation.framework */; };
+		CDBC0E991DFE1992001248A2 /* StatusReportingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC0E981DFE1992001248A2 /* StatusReportingTests.swift */; };
+		CDBC0E9B1DFE1A5F001248A2 /* StatusReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC0E9A1DFE1A5F001248A2 /* StatusReporting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,9 @@
 		6E1B6D3872C51C561A816217 /* Pods-RxAVFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxAVFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxAVFoundation/Pods-RxAVFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		79864B138EB173FF28F2C5C2 /* Pods-RxAVFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxAVFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxAVFoundationTests/Pods-RxAVFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C53B1EBF9F5D20F7D4516B2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96772486540662D1DE9E3D16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		AB3252B24238415422CD70C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AC831C13CDFBE4E27F6BA2D8 /* Pods-RxAVFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxAVFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxAVFoundation/Pods-RxAVFoundation.release.xcconfig"; sourceTree = "<group>"; };
+		CDBC0E981DFE1992001248A2 /* StatusReportingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusReportingTests.swift; sourceTree = "<group>"; };
+		CDBC0E9A1DFE1A5F001248A2 /* StatusReporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusReporting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +86,6 @@
 		4040FFB91CB470100096BEC2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4040FFC81CB470170096BEC2 /* Tests */,
 				4040FFBA1CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift */,
 				4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */,
 				4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */,
@@ -92,6 +93,7 @@
 				4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */,
 				4040FFBF1CB470100096BEC2 /* Info.plist */,
 				4040FFC01CB470100096BEC2 /* RxAVPlayer.h */,
+				CDBC0E9A1DFE1A5F001248A2 /* StatusReporting.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -105,15 +107,16 @@
 				4040FFCC1CB470170096BEC2 /* RxAVPlayerLayerTests.swift */,
 				4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */,
 				4040FFCE1CB470170096BEC2 /* TestHelpers.swift */,
+				CDBC0E981DFE1992001248A2 /* StatusReportingTests.swift */,
 			);
-			name = Tests;
-			path = ../Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		40B801531CAC6CF50009BF04 = {
 			isa = PBXGroup;
 			children = (
 				4040FFB91CB470100096BEC2 /* Source */,
+				4040FFC81CB470170096BEC2 /* Tests */,
 				40B8015E1CAC6CF50009BF04 /* Products */,
 				FB1023659BCA866FEFC77F26 /* Pods */,
 				BD3E022940559C91DB05505F /* Frameworks */,
@@ -142,8 +145,6 @@
 		FB1023659BCA866FEFC77F26 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				96772486540662D1DE9E3D16 /* Pods.debug.xcconfig */,
-				AB3252B24238415422CD70C1 /* Pods.release.xcconfig */,
 				6E1B6D3872C51C561A816217 /* Pods-RxAVFoundation.debug.xcconfig */,
 				AC831C13CDFBE4E27F6BA2D8 /* Pods-RxAVFoundation.release.xcconfig */,
 				79864B138EB173FF28F2C5C2 /* Pods-RxAVFoundationTests.debug.xcconfig */,
@@ -214,7 +215,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = YayNext;
 				TargetAttributes = {
 					40B8015C1CAC6CF50009BF04 = {
@@ -347,6 +348,7 @@
 			files = (
 				4040FFC11CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
 				4040FFC21CB470100096BEC2 /* AVPlayer+Rx.swift in Sources */,
+				CDBC0E9B1DFE1A5F001248A2 /* StatusReporting.swift in Sources */,
 				4040FFC51CB470100096BEC2 /* CMTime+Helpers.swift in Sources */,
 				4040FFC31CB470100096BEC2 /* AVPlayerItem+Rx.swift in Sources */,
 				4040FFC41CB470100096BEC2 /* AVPlayerLayer+Rx.swift in Sources */,
@@ -359,6 +361,7 @@
 			files = (
 				4040FFD81CB4723F0096BEC2 /* RxAVPlayerLayerTests.swift in Sources */,
 				4040FFDA1CB472440096BEC2 /* TestHelpers.swift in Sources */,
+				CDBC0E991DFE1992001248A2 /* StatusReportingTests.swift in Sources */,
 				4040FFD91CB472420096BEC2 /* RxAVPlayerTests.swift in Sources */,
 				4040FFD71CB4723C0096BEC2 /* RxAVPlayerItemTests.swift in Sources */,
 				4040FFD61CB4723A0096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */,
@@ -477,6 +480,7 @@
 			baseConfigurationReference = 6E1B6D3872C51C561A816217 /* Pods-RxAVFoundation.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -498,6 +502,7 @@
 			baseConfigurationReference = AC831C13CDFBE4E27F6BA2D8 /* Pods-RxAVFoundation.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -517,7 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79864B138EB173FF28F2C5C2 /* Pods-RxAVFoundationTests.debug.xcconfig */;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVFoundationTests;
@@ -530,7 +535,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 290E081DBDD1292AFD059CAE /* Pods-RxAVFoundationTests.release.xcconfig */;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVFoundationTests;
