@@ -1,0 +1,23 @@
+PODS:
+  - RxAVFoundation (0.1.0):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxCocoa (3.0.1):
+    - RxSwift (~> 3.0)
+  - RxSwift (3.0.1)
+
+DEPENDENCIES:
+  - RxAVFoundation (from `../`)
+
+EXTERNAL SOURCES:
+  RxAVFoundation:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RxAVFoundation: 4163c93dfd7659104c3d245917d14be8098ee409
+  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
+  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+
+PODFILE CHECKSUM: 53561734fe12dd9d998164dd51be94e38d9a0fdf
+
+COCOAPODS: 1.1.0.rc.2

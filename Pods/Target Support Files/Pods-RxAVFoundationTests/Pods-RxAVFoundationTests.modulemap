@@ -1,0 +1,6 @@
+framework module Pods_RxAVFoundationTests {
+  umbrella header "Pods-RxAVFoundationTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
