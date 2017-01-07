@@ -17,17 +17,6 @@ extension Reactive where Base: AVPlayer {
             .map { $0 ?? 0 }
     }
     
-    public var status: Observable<AVPlayerStatus> {
-        return self.observe(AVPlayerStatus.self, #keyPath(AVPlayer.status))
-            .map { $0 ?? .unknown }
-    }
-    
-    // TODO: This is directly related to status. Should these be wrapped up into one?
-    // potentially an enum that wraps status with an associated error for Failed status?
-    public var error: Observable<NSError?> {
-        return self.observe(NSError.self, #keyPath(AVPlayer.error))
-    }
-    
     public func periodicTimeObserver(interval: CMTime) -> Observable<CMTime> {
         return Observable.create { observer in
             let t = self.base.addPeriodicTimeObserver(forInterval: interval, queue: nil) { time in

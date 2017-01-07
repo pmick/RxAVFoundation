@@ -13,34 +13,6 @@ import AVFoundation
 class RxAVPlayerItemTests: XCTestCase {
     let asset = AVURLAsset(url: URL(string: "www.google.com")!)
     
-    //MARK: Status
-    
-    func testPlayerItem_ShouldAllowObservationOfStatus() {
-        let sut = AVPlayerItem(asset: asset)
-        var capturedStatus: AVPlayerItemStatus?
-        sut.rx.status
-            .subscribe(onNext: { capturedStatus = $0 })
-            .dispose()
-        
-        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.unknown)
-    }
-    
-    func testPlayerItem_ShouldUpdateRxStatus() {
-        class MockItem: AVPlayerItem {
-            fileprivate override var status: AVPlayerItemStatus {
-                return .readyToPlay
-            }
-        }
-        
-        let sut = MockItem(asset: asset)
-        var capturedStatus: AVPlayerItemStatus?
-        sut.rx.status
-            .subscribe(onNext: { capturedStatus = $0 })
-            .dispose()
-        
-        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.readyToPlay)
-    }
-    
     //MARK: Duration
     
     func testPlayerItem_ShouldAllowObservationOfDuration() {
@@ -70,34 +42,6 @@ class RxAVPlayerItemTests: XCTestCase {
             .dispose()
         
         XCTAssertTrue(sut.durationChecked)
-    }
-    
-    // MARK: Error
-    
-    func testPlayerItem_ShouldAllowObservationOfError() {
-        let sut = AVPlayerItem(asset: asset)
-        var capturedError: NSError?
-        sut.rx.error
-            .subscribe(onNext: { capturedError = $0 })
-            .dispose()
-        
-        XCTAssertNil(capturedError)
-    }
-    
-    func testPlayerItem_ShouldUpdateRxError() {
-        class MockItem: AVPlayerItem {
-            fileprivate override var error: Error? {
-                return NSError.test
-            }
-        }
-        
-        let sut = MockItem(asset: asset)
-        var capturedError: NSError?
-        sut.rx.error
-            .subscribe(onNext: { capturedError = $0 })
-            .dispose()
-        
-        XCTAssertEqual(capturedError, NSError.test)
     }
     
     // MARK: PlaybackLikelyToKeepUp
