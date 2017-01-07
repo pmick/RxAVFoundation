@@ -13,12 +13,6 @@ import RxSwift
 
 @testable import RxAVFoundation
 
-struct GenericTestingError: Error, Equatable {
-    public static func ==(lhs: GenericTestingError, rhs: GenericTestingError) -> Bool {
-        return true
-    }
- }
-
 class FakeStatusReporting: NSObject, StatusReporting {
     var status: AVPlayerStatus {
         return .readyToPlay
@@ -90,10 +84,7 @@ class AVPlayer_StatusReportingTests: XCTestCase {
     func testObservingStatus_whenStatusChangesToFailed_throwsError() {
         let sut = FakePlayer()
         var capturedError: GenericTestingError?
-        // TODO: Why is the swift compiler broken? the same line
-        // works above.
-        let status: Observable<PlaybackStatus> = sut.rx.status
-        _ = status.subscribe(onError: { error in
+        _ = sut.rx.status.subscribe(onError: { error in
             capturedError = error as? GenericTestingError
         })
         
@@ -101,10 +92,6 @@ class AVPlayer_StatusReportingTests: XCTestCase {
         
         XCTAssertEqual(capturedError, GenericTestingError())
     }
-}
-
-extension URL {
-    static let testing = URL(string: "https://www.google.com")!
 }
 
 class FakePlayerItem: AVPlayerItem {
@@ -129,7 +116,7 @@ class FakePlayerItem: AVPlayerItem {
 
 class AVPlayerItem_StatusReportingTests: XCTestCase {
     func testObservingStatus_returnsUnknownByDefault() {
-        let sut = AVPlayerItem(url: URL.testing)
+        let sut = AVPlayerItem(url: URL.test)
         var capturedStatus: PlaybackStatus?
         _ = sut.rx.status.subscribe(onNext: { status in
             capturedStatus = status
@@ -139,7 +126,7 @@ class AVPlayerItem_StatusReportingTests: XCTestCase {
     }
     
     func testObservingStatus_whenStatusChanges_forwardsStatusTwice() {
-        let sut = FakePlayerItem(url: URL.testing)
+        let sut = FakePlayerItem(url: URL.test)
         var capturedStatus: PlaybackStatus?
         _ = sut.rx.status.subscribe(onNext: { status in
             capturedStatus = status
@@ -151,12 +138,9 @@ class AVPlayerItem_StatusReportingTests: XCTestCase {
     }
     
     func testObservingStatus_whenStatusChangesToFailed_throwsError() {
-        let sut = FakePlayerItem(url: URL.testing)
+        let sut = FakePlayerItem(url: URL.test)
         var capturedError: GenericTestingError?
-        // TODO: Why is the swift compiler broken? the same line
-        // works above.
-        let status: Observable<PlaybackStatus> = sut.rx.status
-        _ = status.subscribe(onError: { error in
+        _ = sut.rx.status.subscribe(onError: { error in
             capturedError = error as? GenericTestingError
         })
         

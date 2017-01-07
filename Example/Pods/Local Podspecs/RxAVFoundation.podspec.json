@@ -1,6 +1,6 @@
 {
   "name": "RxAVFoundation",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "Functional Reactive (RxSwift) extensions for AVFoundations",
   "homepage": "https://github.com/pmick/RxAVFoundation",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/pmick/RxAVFoundation.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "social_media_url": "http://twitter.com/patrickmick",
   "platforms": {

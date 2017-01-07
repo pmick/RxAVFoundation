@@ -11,19 +11,10 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-extension Reactive where Base: AVPlayerItem {
-    public var status: Observable<AVPlayerItemStatus> {
-        return self.observe(AVPlayerItemStatus.self, #keyPath(AVPlayerItem.status))
-            .map { $0 ?? .unknown }
-    }
-    
+extension Reactive where Base: AVPlayerItem {   
     public var duration: Observable<CMTime> {
         return self.observe(CMTime.self, #keyPath(AVPlayerItem.duration))
             .map { $0 ?? .zero }
-    }
-    
-    public var error: Observable<NSError?> {
-        return self.observe(NSError.self, #keyPath(AVPlayerItem.error))
     }
     
     public var playbackLikelyToKeepUp: Observable<Bool> {

@@ -11,9 +11,9 @@ import Foundation
 
 import RxSwift
 
-struct UnknownPlaybackFailureError: Error { }
+public struct UnknownPlaybackFailureError: Error { }
 
-enum PlaybackStatus: Int {
+public enum PlaybackStatus: Int {
     case unknown
     case readyToPlay
     case failed
@@ -21,7 +21,7 @@ enum PlaybackStatus: Int {
 
 /// This is a generalization over AVPlayer and AVPlayerItem because they both
 /// share a status and error field.
-protocol StatusReporting {
+public protocol StatusReporting {
     associatedtype InheritedStatusType
     
     var error: Error? { get }
@@ -29,7 +29,7 @@ protocol StatusReporting {
 }
 
 extension Reactive where Base: NSObject, Base: ReactiveCompatible, Base: StatusReporting {
-    var status: Observable<PlaybackStatus> {
+    public var status: Observable<PlaybackStatus> {
         return base.rx.observe(AVPlayerStatus.self, #keyPath(AVPlayer.status))
             .map { status -> PlaybackStatus in
                 if status == .failed {

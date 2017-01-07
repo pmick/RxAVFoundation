@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C9D6BC931EEAE3C7FAAE5BA /* Pods_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA58B08B0B9BA4964FBB9832 /* Pods_iOS_Example.framework */; };
 		40547DFF1CB0787D000F5383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DFE1CB0787D000F5383 /* AppDelegate.swift */; };
 		40547E011CB0787D000F5383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547E001CB0787D000F5383 /* ViewController.swift */; };
 		40547E041CB0787D000F5383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40547E021CB0787D000F5383 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		40547E141CB07943000F5383 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		711758680067AA0EFF36660D /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		8B04560A194A0F6ACFE19840 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CA58B08B0B9BA4964FBB9832 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93B0F2EA6A8FB5CEBB89624 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9D6BC931EEAE3C7FAAE5BA /* Pods_iOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,7 @@
 		DC91C328CD701522A1078E96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA58B08B0B9BA4964FBB9832 /* Pods_iOS_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
