@@ -19,3 +19,9 @@ extension URL {
         return URL(string: "www.google.com")!
     }
 }
+
+struct GenericTestingError: Error, Equatable {
+    public static func ==(lhs: GenericTestingError, rhs: GenericTestingError) -> Bool {
+        return true
+    }
+}

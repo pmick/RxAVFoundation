@@ -58,68 +58,6 @@ class RxAVPlayerCurrentItemTests: XCTestCase {
     }
 }
 
-class RxAVPlayerStatusTests: XCTestCase {
-    func testObservingStatus_ShouldReturnTheDefaultUnknown() {
-        let player = AVPlayer()
-        var capturedStatus: AVPlayerStatus?
-        player.rx.status
-            .subscribe(onNext: { capturedStatus = $0 })
-            .dispose()
-        
-        XCTAssertEqual(capturedStatus, .unknown)
-    }
-    
-    func testObservingStatus_WhenItChangesToReadyToPlay_ShouldUpdateTheObserver() {
-        // Makes it so that we can update the readonly property
-        class MockPlayer: AVPlayer {
-            var changeableStatus: AVPlayerStatus = .unknown {
-                willSet { self.willChangeValue(forKey: "status") }
-                didSet { self.didChangeValue(forKey: "status") }
-            }
-            fileprivate override var status: AVPlayerStatus { return changeableStatus }
-        }
-        
-        let player = MockPlayer()
-        var capturedStatus: AVPlayerStatus?
-        let sut = player.rx.status.subscribe(onNext: { capturedStatus = $0 })
-        player.changeableStatus = .readyToPlay
-        sut.dispose()
-        
-        XCTAssertEqual(capturedStatus, .readyToPlay)
-    }
-}
-
-class RxAVPlayerErrorTests: XCTestCase {
-    func testObservingStatus_ShouldReturnTheDefaultUnknown() {
-        let player = AVPlayer()
-        var capturedError: NSError?
-        player.rx.error
-            .subscribe(onNext: { capturedError = $0 })
-            .dispose()
-        
-        XCTAssertNil(capturedError)
-    }
-    
-    func testObservingStatus_WhenItChangesToReadyToPlay_ShouldUpdateTheObserver() {
-        // Makes it so that we can update the readonly property
-        class MockPlayer: AVPlayer {
-            var changeableError: NSError? = nil {
-                willSet { self.willChangeValue(forKey: "error") }
-                didSet { self.didChangeValue(forKey: "error") }
-            }
-            fileprivate override var error: Error? { return changeableError }
-        }
-        
-        let player = MockPlayer()
-        var capturedError: NSError?
-        let sut = player.rx.error.subscribe(onNext: { capturedError = $0 })
-        player.changeableError = NSError.test
-        sut.dispose()
-        
-        XCTAssertEqual(capturedError, NSError.test)
-    }
-}
-
 class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
     func testPediodicTimeObserver_AddsAnObserverToTheAVPlayer() {
         class MockPlayer: AVPlayer {
