@@ -16,6 +16,10 @@ extension Reactive where Base: AVPlayer {
         return self.observe(Float.self, #keyPath(AVPlayer.rate))
             .map { $0 ?? 0 }
     }
+
+    public var currentItem: Observable<AVPlayerItem?> {
+        return observe(AVPlayerItem.self, #keyPath(AVPlayer.currentItem))
+    }
     
     public var status: Observable<AVPlayerStatus> {
         return self.observe(AVPlayerStatus.self, #keyPath(AVPlayer.status))

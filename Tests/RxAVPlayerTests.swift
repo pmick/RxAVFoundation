@@ -33,6 +33,31 @@ class RxAVPlayerRateTests: XCTestCase {
     }
 }
 
+class RxAVPlayerCurrentItemTests: XCTestCase {
+    let player = AVPlayer()
+    var capturedCurrentItem: AVPlayerItem?
+
+    func testObservingCurrentItem_ShouldReturnTheDefaultNilItem() {
+        player.rx.currentItem
+            .subscribe(onNext: { self.capturedCurrentItem = $0 })
+            .dispose()
+
+        XCTAssertNil(capturedCurrentItem)
+    }
+
+    func testObservingCurrentItem_ShouldReturnTheItemWhenSet() {
+        let url = URL(string: "https://example.com")
+        let item = AVPlayerItem(url: url!)
+        player.replaceCurrentItem(with: item)
+
+        player.rx.currentItem
+            .subscribe(onNext: { self.capturedCurrentItem = $0 })
+            .dispose()
+
+        XCTAssertEqual(capturedCurrentItem, item)
+    }
+}
+
 class RxAVPlayerStatusTests: XCTestCase {
     func testObservingStatus_ShouldReturnTheDefaultUnknown() {
         let player = AVPlayer()
