@@ -21,6 +21,15 @@ extension Reactive where Base: AVPlayer {
         return observe(AVPlayerItem.self, #keyPath(AVPlayer.currentItem))
     }
     
+    public var status: Observable<AVPlayerStatus> {
+        return self.observe(AVPlayerStatus.self, #keyPath(AVPlayer.status))
+            .map { $0 ?? .unknown }
+    }
+    
+    public var error: Observable<NSError?> {
+        return self.observe(NSError.self, #keyPath(AVPlayer.error))
+    }
+    
     public func periodicTimeObserver(interval: CMTime) -> Observable<CMTime> {
         return Observable.create { observer in
             let t = self.base.addPeriodicTimeObserver(forInterval: interval, queue: nil) { time in

@@ -21,8 +21,6 @@
 		4040FFD91CB472420096BEC2 /* RxAVPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */; };
 		4040FFDA1CB472440096BEC2 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCE1CB470170096BEC2 /* TestHelpers.swift */; };
 		40B801681CAC6CF50009BF04 /* RxAVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8015D1CAC6CF50009BF04 /* RxAVFoundation.framework */; };
-		CDBC0E991DFE1992001248A2 /* StatusReportingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC0E981DFE1992001248A2 /* StatusReportingTests.swift */; };
-		CDBC0E9B1DFE1A5F001248A2 /* StatusReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC0E9A1DFE1A5F001248A2 /* StatusReporting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +56,6 @@
 		79864B138EB173FF28F2C5C2 /* Pods-RxAVFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxAVFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxAVFoundationTests/Pods-RxAVFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C53B1EBF9F5D20F7D4516B2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC831C13CDFBE4E27F6BA2D8 /* Pods-RxAVFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxAVFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxAVFoundation/Pods-RxAVFoundation.release.xcconfig"; sourceTree = "<group>"; };
-		CDBC0E981DFE1992001248A2 /* StatusReportingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusReportingTests.swift; sourceTree = "<group>"; };
-		CDBC0E9A1DFE1A5F001248A2 /* StatusReporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusReporting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +89,6 @@
 				4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */,
 				4040FFBF1CB470100096BEC2 /* Info.plist */,
 				4040FFC01CB470100096BEC2 /* RxAVPlayer.h */,
-				CDBC0E9A1DFE1A5F001248A2 /* StatusReporting.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -107,7 +102,6 @@
 				4040FFCC1CB470170096BEC2 /* RxAVPlayerLayerTests.swift */,
 				4040FFCD1CB470170096BEC2 /* RxAVPlayerTests.swift */,
 				4040FFCE1CB470170096BEC2 /* TestHelpers.swift */,
-				CDBC0E981DFE1992001248A2 /* StatusReportingTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -348,7 +342,6 @@
 			files = (
 				4040FFC11CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
 				4040FFC21CB470100096BEC2 /* AVPlayer+Rx.swift in Sources */,
-				CDBC0E9B1DFE1A5F001248A2 /* StatusReporting.swift in Sources */,
 				4040FFC51CB470100096BEC2 /* CMTime+Helpers.swift in Sources */,
 				4040FFC31CB470100096BEC2 /* AVPlayerItem+Rx.swift in Sources */,
 				4040FFC41CB470100096BEC2 /* AVPlayerLayer+Rx.swift in Sources */,
@@ -361,7 +354,6 @@
 			files = (
 				4040FFD81CB4723F0096BEC2 /* RxAVPlayerLayerTests.swift in Sources */,
 				4040FFDA1CB472440096BEC2 /* TestHelpers.swift in Sources */,
-				CDBC0E991DFE1992001248A2 /* StatusReportingTests.swift in Sources */,
 				4040FFD91CB472420096BEC2 /* RxAVPlayerTests.swift in Sources */,
 				4040FFD71CB4723C0096BEC2 /* RxAVPlayerItemTests.swift in Sources */,
 				4040FFD61CB4723A0096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */,
