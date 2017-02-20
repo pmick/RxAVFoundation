@@ -1,4 +1,7 @@
 # RxAVPlayer
+
+[![CircleCI](https://circleci.com/gh/pmick/RxAVFoundation.svg?style=svg)](https://circleci.com/gh/pmick/RxAVFoundation)
+
 RxSwift extensions for some AVFoundation classes
 
 ## Installation
