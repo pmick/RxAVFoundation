@@ -78,7 +78,7 @@ class RxAVPlayerItemTests: XCTestCase {
             .subscribe(onNext: { capturedDuration = $0 })
             .dispose()
         
-        XCTAssertEqual(capturedDuration?.value, CMTimeValue.allZeros)
+        XCTAssertEqual(capturedDuration?.value, 0)
     }
 
     func testPlayerItem_ShouldUpdateRxDuration() {

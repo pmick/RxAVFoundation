@@ -44,7 +44,7 @@ extension Reactive where Base: AVPlayer {
         return Observable.create { observer in
             let timeValues = times.map() { NSValue(time: $0) }
             let t = self.base.addBoundaryTimeObserver(forTimes: timeValues, queue: nil) {
-                observer.onNext()
+                observer.onNext(())
             }
             
             return Disposables.create { self.base.removeTimeObserver(t) }
