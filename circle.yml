@@ -3,4 +3,4 @@ machine:
     version: 9.0
 test:
   override:
-    - scan -s RxAVFoundation -o $CIRCLE_TEST_REPORTS/junit/
+    - fastlane scan -s RxAVFoundation -o $CIRCLE_TEST_REPORTS/junit/
