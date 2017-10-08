@@ -120,6 +120,71 @@ class RxAVPlayerErrorTests: XCTestCase {
     }
 }
 
+@available(iOS 10.0, *)
+class RxAVPlayerReasonForWaitingToPlayTests: XCTestCase {
+    func testObservingWaitingReason_ShouldReturnNilByDefault() {
+        let player = AVPlayer()
+        var capturedReason: AVPlayer.WaitingReason?
+        player.rx.reasonForWaitingToPlay
+            .subscribe(onNext: { capturedReason = $0 })
+            .dispose()
+        
+        XCTAssertNil(capturedReason)
+    }
+    
+    func testObservingWaitingReason_WhenItChangesToMinimizeStalls_ShouldUpdateTheObserver() {
+        // Makes it so that we can update the readonly property
+        class MockPlayer: AVPlayer {
+            var changeableReasonForWaitingToPlay: AVPlayer.WaitingReason? = nil {
+                willSet { self.willChangeValue(forKey: "reasonForWaitingToPlay") }
+                didSet { self.didChangeValue(forKey: "reasonForWaitingToPlay") }
+            }
+            fileprivate override var reasonForWaitingToPlay: AVPlayer.WaitingReason? { return changeableReasonForWaitingToPlay }
+        }
+
+        let player = MockPlayer()
+        var capturedReason: AVPlayer.WaitingReason?
+        let sut = player.rx.reasonForWaitingToPlay.subscribe(onNext: { capturedReason = $0 })
+        player.changeableReasonForWaitingToPlay = .toMinimizeStalls
+        sut.dispose()
+
+        XCTAssertEqual(capturedReason, .toMinimizeStalls)
+    }
+}
+
+@available(iOS 10.0, *)
+class RxAVPlayerTimeControlStatusTests: XCTestCase {
+    func testObservingTimeControlStatus_ShouldReturnPausedByDefault() {
+        let player = AVPlayer()
+        var capturedTimeControlStatus: AVPlayerTimeControlStatus?
+        player.rx.timeControlStatus
+            .subscribe(onNext: { capturedTimeControlStatus = $0 })
+            .dispose()
+        
+        // by default you will get paused for a player
+        XCTAssertEqual(capturedTimeControlStatus, .paused)
+    }
+    
+    func testObservingTimeControlStatus_WhenItChangesToPlaying_ShouldUpdateTheObserver() {
+        // Makes it so that we can update the readonly property
+        class MockPlayer: AVPlayer {
+            var changeableTimeControlStats: AVPlayerTimeControlStatus = .waitingToPlayAtSpecifiedRate {
+                willSet { self.willChangeValue(forKey: "timeControlStatus") }
+                didSet { self.didChangeValue(forKey: "timeControlStatus") }
+            }
+            fileprivate override var timeControlStatus: AVPlayerTimeControlStatus { return changeableTimeControlStats }
+        }
+        
+        let player = MockPlayer()
+        var capturedTimeControlStatus: AVPlayerTimeControlStatus?
+        let sut = player.rx.timeControlStatus.subscribe(onNext: { capturedTimeControlStatus = $0 })
+        player.changeableTimeControlStats = .playing
+        sut.dispose()
+        
+        XCTAssertEqual(capturedTimeControlStatus, .playing)
+    }
+}
+
 
 class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
     func testPediodicTimeObserver_AddsAnObserverToTheAVPlayer() {
