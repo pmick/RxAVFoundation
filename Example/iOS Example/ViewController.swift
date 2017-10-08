@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         let item = AVPlayerItem(url: URL(string: "https://i.imgur.com/9rGrj10.mp4")!)
         player.replaceCurrentItem(with: item)
         
-        playerView.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        playerView.playerLayer.videoGravity = .resizeAspectFill
         playerView.playerLayer.player = player
         
         setupProgressObservation(item: item)
