@@ -8,7 +8,6 @@
 
 #if os(iOS) || os(tvOS)
     
-import Foundation
 import UIKit
 #if !RX_NO_MODULE
 import RxSwift
@@ -17,8 +16,8 @@ import RxSwift
 extension Reactive where Base: UINavigationItem {
     
     /// Bindable sink for `title` property.
-    public var title: UIBindingObserver<Base, String?> {
-        return UIBindingObserver(UIElement: self.base) { navigationItem, text in
+    public var title: Binder<String?> {
+        return Binder(self.base) { navigationItem, text in
             navigationItem.title = text
         }
     }

@@ -40,15 +40,15 @@ class ViewController: UIViewController {
             .subscribe(onNext: { [unowned self] status in
                 print("item ready to play")
                 self.player.play()
-            }).addDisposableTo(disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     private func setupProgressObservation(item: AVPlayerItem) {
         let interval = CMTime(seconds: 0.05, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         player.rx.periodicTimeObserver(interval: interval)
             .map { [unowned self] in self.progress(currentTime: $0, duration: item.duration) }
-            .bindTo(progressView.rx.progress)
-            .addDisposableTo(disposeBag)
+            .bind(to: progressView.rx.progress)
+            .disposed(by: disposeBag)
     }
     
     private func progress(currentTime: CMTime, duration: CMTime) -> Float {

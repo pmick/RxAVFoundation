@@ -14,10 +14,9 @@ import RxSwift
 #endif
 
 extension Reactive where Base: UIRefreshControl {
-
     /// Bindable sink for `beginRefreshing()`, `endRefreshing()` methods.
-    public var refreshing: UIBindingObserver<Base, Bool> {
-        return UIBindingObserver(UIElement: self.base) { refreshControl, refresh in
+    public var isRefreshing: Binder<Bool> {
+        return Binder(self.base) { refreshControl, refresh in
             if refresh {
                 refreshControl.beginRefreshing()
             } else {
