@@ -1,8 +1,8 @@
 use_frameworks!
 
 def shared_pods
-  pod 'RxSwift', '~> 3.4'
-  pod 'RxCocoa', '~> 3.4'
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
 end
 
 target "RxAVFoundation" do
