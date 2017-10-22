@@ -20,10 +20,10 @@
   "source_files": "Source/*.swift",
   "dependencies": {
     "RxSwift": [
-      "~> 3.0"
+      "~> 4.0"
     ],
     "RxCocoa": [
-      "~> 3.0"
+      "~> 4.0"
     ]
   }
 }
