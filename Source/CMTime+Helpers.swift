@@ -9,8 +9,11 @@
 import Foundation
 import AVFoundation
 
+#if swift(>=4.2)
+#else
 extension CMTime {
     public static var zero: CMTime {
         return kCMTimeZero
     }
 }
+#endif
