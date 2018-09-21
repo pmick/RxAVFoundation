@@ -21,8 +21,8 @@ extension Reactive where Base: AVPlayer {
         return observe(AVPlayerItem.self, #keyPath(AVPlayer.currentItem))
     }
     
-    public var status: Observable<AVPlayerStatus> {
-        return self.observe(AVPlayerStatus.self, #keyPath(AVPlayer.status))
+    public var status: Observable<AVPlayer.Status> {
+        return self.observe(AVPlayer.Status.self, #keyPath(AVPlayer.status))
             .map { $0 ?? .unknown }
     }
     
@@ -36,8 +36,8 @@ extension Reactive where Base: AVPlayer {
     }
     
     @available(iOS 10.0, tvOS 10.0, *)
-    public var timeControlStatus: Observable<AVPlayerTimeControlStatus> {
-        return self.observe(AVPlayerTimeControlStatus.self, #keyPath(AVPlayer.timeControlStatus))
+    public var timeControlStatus: Observable<AVPlayer.TimeControlStatus> {
+        return self.observe(AVPlayer.TimeControlStatus.self, #keyPath(AVPlayer.timeControlStatus))
             .map { $0 ?? .waitingToPlayAtSpecifiedRate }
     }
     

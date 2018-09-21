@@ -13,7 +13,6 @@
 		4040FFC21CB470100096BEC2 /* AVPlayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */; };
 		4040FFC31CB470100096BEC2 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */; };
 		4040FFC41CB470100096BEC2 /* AVPlayerLayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBD1CB470100096BEC2 /* AVPlayerLayer+Rx.swift */; };
-		4040FFC51CB470100096BEC2 /* CMTime+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */; };
 		4040FFC71CB470100096BEC2 /* RxAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4040FFC01CB470100096BEC2 /* RxAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4040FFD61CB4723A0096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCA1CB470170096BEC2 /* RxAVAsynchronousKeyValueLoadingTests.swift */; };
 		4040FFD71CB4723C0096BEC2 /* RxAVPlayerItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040FFCB1CB470170096BEC2 /* RxAVPlayerItemTests.swift */; };
@@ -40,7 +39,6 @@
 		4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Rx.swift"; sourceTree = "<group>"; };
 		4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Rx.swift"; sourceTree = "<group>"; };
 		4040FFBD1CB470100096BEC2 /* AVPlayerLayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerLayer+Rx.swift"; sourceTree = "<group>"; };
-		4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMTime+Helpers.swift"; sourceTree = "<group>"; };
 		4040FFBF1CB470100096BEC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4040FFC01CB470100096BEC2 /* RxAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxAVPlayer.h; sourceTree = "<group>"; };
 		4040FFC91CB470170096BEC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 				4040FFBB1CB470100096BEC2 /* AVPlayer+Rx.swift */,
 				4040FFBC1CB470100096BEC2 /* AVPlayerItem+Rx.swift */,
 				4040FFBD1CB470100096BEC2 /* AVPlayerLayer+Rx.swift */,
-				4040FFBE1CB470100096BEC2 /* CMTime+Helpers.swift */,
 				4040FFBF1CB470100096BEC2 /* Info.plist */,
 				4040FFC01CB470100096BEC2 /* RxAVPlayer.h */,
 			);
@@ -342,7 +339,6 @@
 			files = (
 				4040FFC11CB470100096BEC2 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
 				4040FFC21CB470100096BEC2 /* AVPlayer+Rx.swift in Sources */,
-				4040FFC51CB470100096BEC2 /* CMTime+Helpers.swift in Sources */,
 				4040FFC31CB470100096BEC2 /* AVPlayerItem+Rx.swift in Sources */,
 				4040FFC41CB470100096BEC2 /* AVPlayerLayer+Rx.swift in Sources */,
 			);
@@ -497,7 +493,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -518,7 +514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -531,7 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -544,7 +540,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YayNext.RxAVFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

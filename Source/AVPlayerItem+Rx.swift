@@ -12,8 +12,8 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: AVPlayerItem {
-    public var status: Observable<AVPlayerItemStatus> {
-        return self.observe(AVPlayerItemStatus.self, #keyPath(AVPlayerItem.status))
+    public var status: Observable<AVPlayerItem.Status> {
+        return self.observe(AVPlayerItem.Status.self, #keyPath(AVPlayerItem.status))
             .map { $0 ?? .unknown }
     }
     

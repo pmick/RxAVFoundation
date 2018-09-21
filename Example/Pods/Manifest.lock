@@ -1,23 +1,28 @@
 PODS:
-  - RxAVFoundation (1.2.0):
+  - RxAVFoundation (2.1.0):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxCocoa (4.0.0):
+  - RxCocoa (4.3.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.0.0)
+  - RxSwift (4.3.0)
 
 DEPENDENCIES:
   - RxAVFoundation (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxCocoa
+    - RxSwift
 
 EXTERNAL SOURCES:
   RxAVFoundation:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RxAVFoundation: b57e6027ab57cbf3bcd04d1a84afd325d78a836a
-  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  RxAVFoundation: ffd0a1dbe98d92bc985cdf35224623963664e6d8
+  RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
+  RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
 
 PODFILE CHECKSUM: 53561734fe12dd9d998164dd51be94e38d9a0fdf
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.3

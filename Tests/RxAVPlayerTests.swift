@@ -61,7 +61,7 @@ class RxAVPlayerCurrentItemTests: XCTestCase {
 class RxAVPlayerStatusTests: XCTestCase {
     func testObservingStatus_ShouldReturnTheDefaultUnknown() {
         let player = AVPlayer()
-        var capturedStatus: AVPlayerStatus?
+        var capturedStatus: AVPlayer.Status?
         player.rx.status
             .subscribe(onNext: { capturedStatus = $0 })
             .dispose()
@@ -72,15 +72,15 @@ class RxAVPlayerStatusTests: XCTestCase {
     func testObservingStatus_WhenItChangesToReadyToPlay_ShouldUpdateTheObserver() {
         // Makes it so that we can update the readonly property
         class MockPlayer: AVPlayer {
-            var changeableStatus: AVPlayerStatus = .unknown {
+            var changeableStatus: AVPlayer.Status = .unknown {
                 willSet { self.willChangeValue(forKey: "status") }
                 didSet { self.didChangeValue(forKey: "status") }
             }
-            fileprivate override var status: AVPlayerStatus { return changeableStatus }
+            fileprivate override var status: AVPlayer.Status { return changeableStatus }
         }
         
         let player = MockPlayer()
-        var capturedStatus: AVPlayerStatus?
+        var capturedStatus: AVPlayer.Status?
         let sut = player.rx.status.subscribe(onNext: { capturedStatus = $0 })
         player.changeableStatus = .readyToPlay
         sut.dispose()
@@ -156,7 +156,7 @@ class RxAVPlayerReasonForWaitingToPlayTests: XCTestCase {
 class RxAVPlayerTimeControlStatusTests: XCTestCase {
     func testObservingTimeControlStatus_ShouldReturnPausedByDefault() {
         let player = AVPlayer()
-        var capturedTimeControlStatus: AVPlayerTimeControlStatus?
+        var capturedTimeControlStatus: AVPlayer.TimeControlStatus?
         player.rx.timeControlStatus
             .subscribe(onNext: { capturedTimeControlStatus = $0 })
             .dispose()
@@ -168,15 +168,15 @@ class RxAVPlayerTimeControlStatusTests: XCTestCase {
     func testObservingTimeControlStatus_WhenItChangesToPlaying_ShouldUpdateTheObserver() {
         // Makes it so that we can update the readonly property
         class MockPlayer: AVPlayer {
-            var changeableTimeControlStats: AVPlayerTimeControlStatus = .waitingToPlayAtSpecifiedRate {
+            var changeableTimeControlStats: AVPlayer.TimeControlStatus = .waitingToPlayAtSpecifiedRate {
                 willSet { self.willChangeValue(forKey: "timeControlStatus") }
                 didSet { self.didChangeValue(forKey: "timeControlStatus") }
             }
-            fileprivate override var timeControlStatus: AVPlayerTimeControlStatus { return changeableTimeControlStats }
+            fileprivate override var timeControlStatus: AVPlayer.TimeControlStatus { return changeableTimeControlStats }
         }
         
         let player = MockPlayer()
-        var capturedTimeControlStatus: AVPlayerTimeControlStatus?
+        var capturedTimeControlStatus: AVPlayer.TimeControlStatus?
         let sut = player.rx.timeControlStatus.subscribe(onNext: { capturedTimeControlStatus = $0 })
         player.changeableTimeControlStats = .playing
         sut.dispose()
