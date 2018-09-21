@@ -17,28 +17,28 @@ class RxAVPlayerItemTests: XCTestCase {
     
     func testPlayerItem_ShouldAllowObservationOfStatus() {
         let sut = AVPlayerItem(asset: asset)
-        var capturedStatus: AVPlayerItemStatus?
+        var capturedStatus: AVPlayerItem.Status?
         sut.rx.status
             .subscribe(onNext: { capturedStatus = $0 })
             .dispose()
         
-        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.unknown)
+        XCTAssertEqual(capturedStatus, AVPlayerItem.Status.unknown)
     }
     
     func testPlayerItem_ShouldUpdateRxStatus() {
         class MockItem: AVPlayerItem {
-            fileprivate override var status: AVPlayerItemStatus {
+            fileprivate override var status: AVPlayerItem.Status {
                 return .readyToPlay
             }
         }
         
         let sut = MockItem(asset: asset)
-        var capturedStatus: AVPlayerItemStatus?
+        var capturedStatus: AVPlayerItem.Status?
         sut.rx.status
             .subscribe(onNext: { capturedStatus = $0 })
             .dispose()
         
-        XCTAssertEqual(capturedStatus, AVPlayerItemStatus.readyToPlay)
+        XCTAssertEqual(capturedStatus, AVPlayerItem.Status.readyToPlay)
     }
     
     // MARK: Error
