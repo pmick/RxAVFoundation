@@ -1,6 +1,6 @@
 {
   "name": "RxAVFoundation",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "summary": "Functional Reactive (RxSwift) extensions for AVFoundations",
   "homepage": "https://github.com/pmick/RxAVFoundation",
   "license": "MIT",
@@ -9,10 +9,10 @@
   },
   "source": {
     "git": "https://github.com/pmick/RxAVFoundation.git",
-    "tag": "2.1.0"
+    "tag": "3.0.0"
   },
   "social_media_url": "http://twitter.com/patrickmick",
-  "swift_versions": "4.2",
+  "swift_versions": "5.0",
   "platforms": {
     "ios": "8.0",
     "tvos": "9.0"
@@ -21,11 +21,11 @@
   "source_files": "Source/*.swift",
   "dependencies": {
     "RxSwift": [
-      "~> 4.0"
+      "~> 5.0"
     ],
     "RxCocoa": [
-      "~> 4.0"
+      "~> 5.0"
     ]
   },
-  "swift_version": "4.2"
+  "swift_version": "5.0"
 }
