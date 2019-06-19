@@ -12,7 +12,7 @@
     "tag": "2.1.0"
   },
   "social_media_url": "http://twitter.com/patrickmick",
-  "swift_version": "4.2",
+  "swift_versions": "4.2",
   "platforms": {
     "ios": "8.0",
     "tvos": "9.0"
@@ -26,5 +26,6 @@
     "RxCocoa": [
       "~> 4.0"
     ]
-  }
+  },
+  "swift_version": "4.2"
 }
