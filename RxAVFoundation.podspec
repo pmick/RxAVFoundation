@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "RxAVFoundation"
-  s.version          = "2.1.0"
+  s.version          = "3.0.0"
   s.summary          = "Functional Reactive (RxSwift) extensions for AVFoundations"
   s.homepage         = "https://github.com/pmick/RxAVFoundation"
   s.license          = 'MIT'
@@ -16,13 +16,13 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/pmick/RxAVFoundation.git", :tag => s.version.to_s }
   s.social_media_url = "http://twitter.com/patrickmick"
 
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
   s.requires_arc = true
 
   s.source_files = 'Source/*.swift'
 
-  s.dependency 'RxSwift', '~> 4.0'
-  s.dependency 'RxCocoa', '~> 4.0'
+  s.dependency 'RxSwift', '~> 5.0'
+  s.dependency 'RxCocoa', '~> 5.0'
 end
