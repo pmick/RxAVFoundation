@@ -239,7 +239,7 @@ class RxAVPlayerPeriodicTimeObserverTests: XCTestCase {
             }
             
             fileprivate override func removeTimeObserver(_ observer: Any) {
-                capturedRemove = observer as! String
+                capturedRemove = observer as? String
             }
         }
         
@@ -304,7 +304,7 @@ class RxAVPlayerPeriodicBoundaryObserverTests: XCTestCase {
             }
             
             fileprivate override func removeTimeObserver(_ observer: Any) {
-                capturedRemove = observer as! String
+                capturedRemove = observer as? String
             }
         }
         

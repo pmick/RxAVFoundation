@@ -6,9 +6,7 @@
 //  Copyright © 2016 Krunoslav Zaher. All rights reserved.
 //
 
-#if !RX_NO_MODULE
-    import RxSwift
-#endif
+import RxSwift
 
 /**
  Trait that represents observable sequence with following properties:
@@ -29,19 +27,19 @@
  
  To find out more about units and how to use them, please visit `Documentation/Traits.md`.
  */
-public typealias Signal<E> = SharedSequence<SignalSharingStrategy, E>
+public typealias Signal<Element> = SharedSequence<SignalSharingStrategy, Element>
 
-public struct SignalSharingStrategy : SharingStrategyProtocol {
+public struct SignalSharingStrategy: SharingStrategyProtocol {
     public static var scheduler: SchedulerType { return SharingScheduler.make() }
     
-    public static func share<E>(_ source: Observable<E>) -> Observable<E> {
+    public static func share<Element>(_ source: Observable<Element>) -> Observable<Element> {
         return source.share(scope: .whileConnected)
     }
 }
 
 extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
     /// Adds `asPublisher` to `SharingSequence` with `PublishSharingStrategy`.
-    public func asSignal() -> Signal<E> {
-        return asSharedSequence()
+    public func asSignal() -> Signal<Element> {
+        return self.asSharedSequence()
     }
 }

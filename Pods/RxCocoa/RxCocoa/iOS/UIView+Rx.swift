@@ -9,9 +9,7 @@
 #if os(iOS) || os(tvOS)
 
 import UIKit
-#if !RX_NO_MODULE
 import RxSwift
-#endif
 
 extension Reactive where Base: UIView {
     /// Bindable sink for `hidden` property.
@@ -25,6 +23,13 @@ extension Reactive where Base: UIView {
     public var alpha: Binder<CGFloat> {
         return Binder(self.base) { view, alpha in
             view.alpha = alpha
+        }
+    }
+
+    /// Bindable sink for `backgroundColor` property.
+    public var backgroundColor: Binder<UIColor?> {
+        return Binder(self.base) { view, color in
+            view.backgroundColor = color
         }
     }
 
