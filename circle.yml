@@ -1,8 +1,0 @@
-machine:
-  xcode:
-    version: 9.0
-test:
-  override:
-    - fastlane scan -s RxAVFoundation -o $CIRCLE_TEST_REPORTS/xcode/ -f junit --output_files results.xml
-    - xcodebuild clean build -workspace Example/iOS\ Example.xcworkspace -scheme iOS\ Example CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
-      
