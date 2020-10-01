@@ -120,7 +120,7 @@ class RxAVPlayerErrorTests: XCTestCase {
     }
 }
 
-@available(iOS 10.0, tvOS 10.0, *)
+@available(iOS 10.0, tvOS 10.0, OSX 10.12, *)
 class RxAVPlayerReasonForWaitingToPlayTests: XCTestCase {
     func testObservingWaitingReason_ShouldReturnNilByDefault() {
         let player = AVPlayer()
@@ -152,7 +152,7 @@ class RxAVPlayerReasonForWaitingToPlayTests: XCTestCase {
     }
 }
 
-@available(iOS 10.0, tvOS 10.0, *)
+@available(iOS 10.0, tvOS 10.0, OSX 10.12, *)
 class RxAVPlayerTimeControlStatusTests: XCTestCase {
     func testObservingTimeControlStatus_ShouldReturnPausedByDefault() {
         let player = AVPlayer()
