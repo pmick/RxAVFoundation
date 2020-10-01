@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C9D6BC931EEAE3C7FAAE5BA /* Pods_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA58B08B0B9BA4964FBB9832 /* Pods_iOS_Example.framework */; };
 		40547DFF1CB0787D000F5383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547DFE1CB0787D000F5383 /* AppDelegate.swift */; };
 		40547E011CB0787D000F5383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547E001CB0787D000F5383 /* ViewController.swift */; };
 		40547E041CB0787D000F5383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40547E021CB0787D000F5383 /* Main.storyboard */; };
 		40547E061CB0787D000F5383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40547E051CB0787D000F5383 /* Assets.xcassets */; };
 		40547E091CB0787D000F5383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40547E071CB0787D000F5383 /* LaunchScreen.storyboard */; };
 		40547E151CB07943000F5383 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40547E141CB07943000F5383 /* PlayerView.swift */; };
+		CD106F5B2525AF48002D44AC /* RxAVFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = CD106F5A2525AF48002D44AC /* RxAVFoundation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C9D6BC931EEAE3C7FAAE5BA /* Pods_iOS_Example.framework in Frameworks */,
+				CD106F5B2525AF48002D44AC /* RxAVFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,18 +99,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40547E0D1CB0787D000F5383 /* Build configuration list for PBXNativeTarget "iOS Example" */;
 			buildPhases = (
-				9B118331B7455201BDA00CD5 /* [CP] Check Pods Manifest.lock */,
 				40547DF71CB0787D000F5383 /* Sources */,
 				40547DF81CB0787D000F5383 /* Frameworks */,
 				40547DF91CB0787D000F5383 /* Resources */,
 				40547E131CB07921000F5383 /* Embed Frameworks */,
-				2096CBB297A549B094261976 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "iOS Example";
+			packageProductDependencies = (
+				CD106F5A2525AF48002D44AC /* RxAVFoundation */,
+			);
 			productName = "iOS Example";
 			productReference = 40547DFB1CB0787D000F5383 /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +141,9 @@
 				Base,
 			);
 			mainGroup = 40547DF21CB0787D000F5383;
+			packageReferences = (
+				CD106F592525AF48002D44AC /* XCRemoteSwiftPackageReference "RxAVFoundation" */,
+			);
 			productRefGroup = 40547DFC1CB0787D000F5383 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,51 +165,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2096CBB297A549B094261976 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS Example/Pods-iOS Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAVFoundation/RxAVFoundation.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAVFoundation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS Example/Pods-iOS Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B118331B7455201BDA00CD5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iOS Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40547DF71CB0787D000F5383 /* Sources */ = {
@@ -325,7 +284,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -335,10 +295,12 @@
 		40547E0E1CB0787D000F5383 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YayNext.iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -348,10 +310,12 @@
 		40547E0F1CB0787D000F5383 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YayNext.iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -380,6 +344,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD106F592525AF48002D44AC /* XCRemoteSwiftPackageReference "RxAVFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "../";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD106F5A2525AF48002D44AC /* RxAVFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD106F592525AF48002D44AC /* XCRemoteSwiftPackageReference "RxAVFoundation" */;
+			productName = RxAVFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 40547DF31CB0787D000F5383 /* Project object */;
 }
