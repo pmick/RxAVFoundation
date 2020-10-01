@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.0'
   s.requires_arc = true
 
-  s.source_files = 'Source/*.swift'
+  s.source_files = 'Sources/RxAVFoundation/*.swift'
 
   s.dependency 'RxSwift', '~> 5.0'
   s.dependency 'RxCocoa', '~> 5.0'

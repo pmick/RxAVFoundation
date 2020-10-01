@@ -30,7 +30,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3E826FF3F9F21856231EC4AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		40547DFB1CB0787D000F5383 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40547DFE1CB0787D000F5383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40547E001CB0787D000F5383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,10 +38,7 @@
 		40547E081CB0787D000F5383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40547E0A1CB0787D000F5383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40547E141CB07943000F5383 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		711758680067AA0EFF36660D /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
-		8B04560A194A0F6ACFE19840 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CA58B08B0B9BA4964FBB9832 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D93B0F2EA6A8FB5CEBB89624 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +58,6 @@
 			children = (
 				40547DFD1CB0787D000F5383 /* iOS Example */,
 				40547DFC1CB0787D000F5383 /* Products */,
-				C1AB4D09CA81413620D0C3F9 /* Pods */,
 				DC91C328CD701522A1078E96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -87,17 +82,6 @@
 				40547E141CB07943000F5383 /* PlayerView.swift */,
 			);
 			path = "iOS Example";
-			sourceTree = "<group>";
-		};
-		C1AB4D09CA81413620D0C3F9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D93B0F2EA6A8FB5CEBB89624 /* Pods.debug.xcconfig */,
-				3E826FF3F9F21856231EC4AB /* Pods.release.xcconfig */,
-				8B04560A194A0F6ACFE19840 /* Pods-iOS Example.debug.xcconfig */,
-				711758680067AA0EFF36660D /* Pods-iOS Example.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		DC91C328CD701522A1078E96 /* Frameworks */ = {
@@ -151,6 +135,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -349,7 +334,6 @@
 		};
 		40547E0E1CB0787D000F5383 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B04560A194A0F6ACFE19840 /* Pods-iOS Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -363,7 +347,6 @@
 		};
 		40547E0F1CB0787D000F5383 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 711758680067AA0EFF36660D /* Pods-iOS Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
