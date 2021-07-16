@@ -30,7 +30,7 @@ extension Reactive where Base: AVPlayer {
         return self.observe(NSError.self, #keyPath(AVPlayer.error))
     }
     
-    @available(iOS 10.0, tvOS 10.0, *)
+    @available(iOS 10.0, tvOS 10.0, macOS 10.12, *)
     public var reasonForWaitingToPlay: Observable<AVPlayer.WaitingReason?> {
         return self.observe(AVPlayer.WaitingReason.self, #keyPath(AVPlayer.reasonForWaitingToPlay))
     }
