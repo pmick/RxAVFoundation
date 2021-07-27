@@ -14,7 +14,7 @@ class RxAVPlayerLayerTests: XCTestCase {
     func testPlayerLayer_ShouldAllowObservationOfReadyForDisplay() {
         let sut = AVPlayerLayer()
         var capturedFlag: Bool!
-        sut.rx.readyForDisplay
+        sut.rx.isReadyForDisplay
             .subscribe(onNext: { capturedFlag = $0 })
             .dispose()
         
